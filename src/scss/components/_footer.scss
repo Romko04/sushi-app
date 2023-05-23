@@ -1,0 +1,65 @@
+.footer {
+    position: relative;
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #F8F8F8;
+    border-top: 1px solid #EBEBEB;
+    padding-top: 40px;
+  
+    &__content {
+      position: relative;
+      padding: 0 40px;
+      padding-bottom: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      &::after {
+        content: '';
+        height: 1px;
+        left: 40px;
+        right: 40px;
+        bottom: 10px;
+        position: absolute;
+        background: #EBEBEB
+      }
+    }
+  
+    &__content-left {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+    }
+  
+    &__social-network {
+      margin-right: 14px;
+    }
+  
+    &__number {
+      font-family: 'TT Hoves';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 130.3%;
+      color: #000000;
+      position: relative;
+  
+      &::before {
+        content: url('../../assets/img/svg/phone.svg');
+        position: absolute;
+        height: 20px;
+        left: -20px;
+      }
+    }
+  
+    &__content-right--text {
+      max-width: 225px;
+    }
+  
+    &__content-bottom {
+      margin: 40px 0;
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+    }
+  
+  }
