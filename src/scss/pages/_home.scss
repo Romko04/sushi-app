@@ -1,0 +1,43 @@
+.banner {
+    padding: 40px 0 150px;
+    background-image: url('../../assets/img/svg/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    &__content {
+      margin: 150px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
+  
+    &__content--title {
+      font-family: 'TT Hoves';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 88px;
+      line-height: 95%;
+      /* or 84px */
+      max-width: 575px;
+      letter-spacing: -0.06em;
+  
+      color: #FFFFFF;
+    }
+  
+    &__content--text {
+      font-family: 'TT Hoves';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 23px;
+      line-height: 27px;
+      max-width: 360px;
+      color: #FFFFFF;
+    }
+  
+    &__content-link {
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  
