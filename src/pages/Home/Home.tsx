@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from './sections/Banner';
+import Banner from './sections/Banner/Banner';
 const Home: React.FC = () => {
     return (
         <>

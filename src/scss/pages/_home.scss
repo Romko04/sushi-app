@@ -33,11 +33,24 @@
       max-width: 360px;
       color: #FFFFFF;
     }
-  
+    &__content-btn:hover{
+      background-color: #686161;
+
+    }
     &__content-link {
       &:hover {
         opacity: 1;
       }
     }
   }
+  .swiper__slide-img {
+    text-align: center;
   
+    img {
+      width: 100%;
+      border-radius: 21px;
+    }
+  }
+  .content {
+    min-width: 0;
+  }

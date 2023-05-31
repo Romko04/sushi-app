@@ -1,95 +1,115 @@
-@import './libs/normalize';
 @import './variables';
-@import './components/all';
-@import './pages/all';
-
+@font-face {
+  font-family: "TT Hoves";
+  src: url("../assets/fonts/TT Hoves Pro Trial Light.ttf") format("truetype");
+  font-weight: 300;
+}
 
 @font-face {
-    font-family: "TT Hoves";
-    src: url("../assets/fonts/TT Hoves Pro Trial Light.ttf") format("truetype");
-    font-weight: 300;
+  font-family: "TT Hoves";
+  src: url("../assets/fonts/TT Hoves Pro Trial Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  src: url("../assets/fonts/TT Hoves Pro Trial Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: "TT Hoves Medium", sans-serif;
+  font-size: 20px;
+  color: #000;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  padding-top: 20px;
+}
+
+
+.container {
+  padding: 0 40px;
+}
+
+.title {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 88px;
+  line-height: 95%;
+  letter-spacing: -0.06em;
+  color: #000000;
+}
+.price{
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 130.3%;
+  color: #000000;
+
+}
+.subtitle {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 27px;
+  max-width: 470px;
+  color: #000000;
+}
+
+.content-text {
+  display: flex;
+  align-items: flex-end;
+}
+
+.data--input {
+  background: #F8F8F8;
+  border-radius: 11px;
+  padding: 18px;
+}
+
+.data--label {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.07em;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+  color: #000000;
+}
+.button {
+  padding: 24px 82px 24px 40px;
+  background-color: $btn-color;
+  color: #fff;
+  border-radius: 300px;
+  position: relative;
+  transition: background-color ease .2s;
+
+  &::after {
+    position: absolute;
+    content: url('../assets/img/svg/arrowmenu.svg');
+    height: 10px;
+    top: 25px;
+    right: 29px;
   }
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+  @import './libs/normalize';
+  @import './components/all';
+  @import './pages/all';
   
-  @font-face {
-    font-family: "TT Hoves";
-    src: url("../assets/fonts/TT Hoves Pro Trial Medium.ttf") format("truetype");
-  }
-  
-  @font-face {
-    font-family: "TT Hoves";
-    src: url("../assets/fonts/TT Hoves Pro Trial Regular.ttf") format("truetype");
-  }
-  
-  body {
-    font-family: "TT Hoves Medium", sans-serif;
-    font-size: 20px;
-    color: #000;
-  }
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .main {
-    flex: 1;
-    display: flex;
-    padding-top: 20px;
-  }
-  
-  
-  .container {
-    padding: 0 40px;
-  }
-  
-  .title {
-    font-family: 'TT Hoves';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 88px;
-    line-height: 95%;
-    letter-spacing: -0.06em;
-    color: #000000;
-  }
-  .price{
-    font-family: 'TT Hoves';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 130.3%;
-    color: #000000;
-  
-  }
-  .subtitle {
-    font-family: 'TT Hoves';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 27px;
-    max-width: 470px;
-    color: #000000;
-  }
-  
-  .content-text {
-    display: flex;
-    align-items: flex-end;
-  }
-  
-  .data--input {
-    background: #F8F8F8;
-    border-radius: 11px;
-    padding: 18px;
-  }
-  
-  .data--label {
-    font-family: 'TT Hoves';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: -0.07em;
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 20px;
-    color: #000000;
-  }
