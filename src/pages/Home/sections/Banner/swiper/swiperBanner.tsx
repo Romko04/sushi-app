@@ -17,17 +17,17 @@ import { Pagination } from 'swiper';
       >
         <SwiperSlide> 
           <div className="swiper__slide-img">
-           <img src={Slide1} alt="" />
+           <img src={Slide1} alt="slideBanner" />
           </div>
         </SwiperSlide>
         <SwiperSlide> 
           <div className="swiper__slide-img">
-           <img src={Slide2} alt="" />
+           <img src={Slide2} alt="slideBanner" />
           </div>
         </SwiperSlide>
         <SwiperSlide> 
           <div className="swiper__slide-img">
-           <img src={Slide1} alt="" />
+           <img src={Slide1} alt="slideBanner" />
           </div>
         </SwiperSlide>
       </Swiper>

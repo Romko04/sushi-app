@@ -1,0 +1,117 @@
+@import 'swiper/css/navigation';
+.product__card {
+    background: #F8F8F8;
+    border-radius: 19px;
+    padding-bottom: 30px;
+  
+    &-img {
+      padding: 0;
+  
+    }
+  
+    &-text {
+      font-family: 'TT Hoves';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+      /* identical to box height */
+  
+  
+      color: #000000;
+      max-width: 279px;
+      margin-top: 40px;
+    }
+  
+    &-title {
+      font-family: 'TT Hoves';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 33px;
+      line-height: 95%;
+      /* or 31px */
+  
+      letter-spacing: -0.06em;
+  
+      color: #000000;
+      margin-top: 30px;
+    }
+  
+    &-btn {
+      padding: 15px 40px;
+  
+      &::after {
+        display: none;
+      }
+    }
+  
+    &-content-bottom {
+      margin-top: 40px;
+      width: 100%;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+  
+    &-price {
+      font-family: 'TT Hoves';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 23px;
+      line-height: 130.3%;
+      color: #000000;
+  
+    }
+  
+    &-content {
+      padding-left: 20px;
+    }
+  }
+  
+.recommendations__swiper-prev,
+.recommendations__swiper-next {
+  position: static;
+  margin-top: unset;
+  border-radius: 50%;
+  background: #F8F8F8;
+  width: 57px;
+  height: 57px;
+
+  &::after {
+    content: '';
+  }
+
+  &:hover {
+    background-color: #F03C1F;
+    stroke: #fff;
+  }
+}
+
+.recommendations__swiper-prev:hover .recommendations__swiper-icon,
+.recommendations__swiper-next:hover .recommendations__swiper-icon {
+  stroke: #fff;
+  /* Змінює колір іконки на білий */
+}
+
+.recommendations__swiper-prev {
+  margin-right: 50px;
+}
+
+.recommendations__swiper-next {
+  margin-right: 80px;
+}
+
+.recommendations__swiper-icon {
+  stroke: #000;
+}
+
+.recommendations__swiper-buttons {
+  margin-top: 70px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recommendations__swiper-btn {
+  margin-right: 80px;
+}

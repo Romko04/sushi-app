@@ -54,3 +54,48 @@
   .content {
     min-width: 0;
   }
+  .recommendations {
+    padding-top: 187px;
+  
+    &__content {
+      margin-bottom: 150px;
+    }
+  
+    &__content-title {
+      margin-right: 125px;
+      max-width: 630px;
+  
+    }
+  
+  
+  
+  }
+  .recommendations__swiper-prev:hover .recommendations__swiper-icon,
+.recommendations__swiper-next:hover .recommendations__swiper-icon {
+  stroke: #fff;
+  /* Змінює колір іконки на білий */
+}
+
+.recommendations__swiper-prev {
+  margin-right: 50px;
+}
+
+.recommendations__swiper-next {
+  margin-right: 80px;
+}
+
+.recommendations__swiper-icon {
+  stroke: #000;
+}
+
+.recommendations__swiper-buttons {
+  margin-top: 70px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recommendations__swiper-btn {
+  margin-right: 80px;
+}
+  
