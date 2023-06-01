@@ -8,7 +8,7 @@ export default () => {
   return (
     <Swiper
       modules={[Navigation]}
-      spaceBetween={50}
+      spaceBetween={10}
       slidesPerView={4}
       navigation={{
         prevEl: '.swiper-button-prev',

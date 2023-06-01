@@ -98,4 +98,143 @@
 .recommendations__swiper-btn {
   margin-right: 80px;
 }
-  
+.menu {
+  padding-bottom: 190px;
+
+  &__content-text {
+    margin-bottom: 150px;
+  }
+
+  &__navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    max-width: 639px;
+    margin-right: 116px;
+  }
+
+  &__subtitle {
+    max-width: 221px;
+  }
+  &__navigaton-img{
+    transition: all ease .2s;
+  }
+  &__navigaton-img:hover{
+    opacity: .7;
+  }
+}
+.aboutUs {
+  padding-bottom: 150px;
+
+  &__title {
+    margin-right: 96px;
+  }
+
+  &__content-text {
+    margin-bottom: 175px;
+  }
+
+  &__content {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__content-img__wrapper {
+    background-color: #F03C1F;
+    border-radius: 22px;
+    position: relative;
+  }
+
+  &__content-img__wrapper-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    margin: 0 auto;
+    max-width: 561px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 95%;
+    letter-spacing: -0.06em;
+    color: #FFFFFF;
+  }
+
+
+}
+.shipping {
+  &__content-text {
+    margin-bottom: 100px;
+  }
+
+  &__title {
+    margin-right: 224px;
+  }
+
+  &__img {
+    margin-bottom: 190px;
+  }
+
+  &__btn {
+    padding: 110px 0 90px;
+    text-align: center;
+  }
+
+  &__conditions {
+    display: flex;
+    gap: 90px;
+
+    &-content {
+      display: flex;
+      gap: 180px;
+      align-items: center;
+
+      &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+      }
+
+      &__right {
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+      }
+
+      &__worktime-title {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 23px;
+        line-height: 27px;
+        margin-bottom: 20px;
+        color: #000000;
+      }
+
+      &__text {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 27px;
+        color: #000000;
+      }
+
+      &__worktime-text {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 27px;
+        color: #000000;
+      }
+    }
+  }
+}
