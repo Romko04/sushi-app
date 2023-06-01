@@ -1,7 +1,18 @@
 import React from 'react';
 import Logo from '../../assets/img/svg/logo.svg'
 import Nav from './Nav';
+import DropDown from './DropDown/DropDown';
 const Header = () => {
+    type dropDownsType = {
+        numbers: string[],
+        cities: string[],
+        languages: string[],
+    }
+    const dropDowns:dropDownsType = {
+        numbers:['48 696 84 31 31','48 636 44 31 31','42 6096 84 32 33'],
+        cities: ['London', 'Krakow'],
+        languages: ['UA','RU','PL']
+    }
     return (
         <header className="header">
             <a className="header__logo" href="./index.html">
@@ -11,28 +22,10 @@ const Header = () => {
             <button className="header__burger">
                 <span></span>
             </button>
+            <DropDown list={dropDowns.numbers} type='numbers' />
+            <DropDown list={dropDowns.languages} type='languages' />
+            <DropDown list={dropDowns.cities} type='cities' />
             <div className="header__content-right">
-                <div className="header__dropdown header__dropdown--number">
-                    <select className="header__dropdown-select" name="phone" id="phone">
-                        <option value="">48 696 84 31 31</option>
-                        <option value="380-12-34">380-12-34</option>
-                        <option value="380-56-78">380-56-78</option>
-                        <option value="380-90-12">380-90-12</option>
-                    </select>
-                </div>
-                <div className="header__dropdown">
-                    <select className="header__dropdown-select" name="phone" id="phone">
-                        <option value="">Pl</option>
-                        <option value="380-12-34">UA</option>
-                        <option value="380-56-78">ENG</option>
-                    </select>
-                </div>
-                <div className="header__dropdown header__dropdown--city">
-                    <select className="header__dropdown-select__btn--city" name="phone" id="phone">
-                        <option value="">Выберите ваш город </option>
-                        <option value="380-12-34">Краков</option>
-                    </select>
-                </div>
                 <nav className="header__right-nav">
                     <ul className="header__right-nav__list">
                         <li className="header__right-nav__list-item header__right-nav__list-item--basket">
