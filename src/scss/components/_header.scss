@@ -61,5 +61,8 @@
 
 
     color: #C0C0C0;
+    &:hover{
+      color: $hover-color;
+    }
   }
 }

@@ -10,11 +10,9 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
     const [isActive, setActive] = useState<boolean>(false);
     const menuRef = useRef<HTMLDivElement|null>(null)
     const handleClickOutside = (e:MouseEvent) => {
-        if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        if (!menuRef?.current?.contains(e.target as Node)) {
             setActive(false);
           }
-        
-        
     }
     useEffect(() => {
         window.addEventListener('click', handleClickOutside )
