@@ -22,13 +22,14 @@
   color: #C83A2E;
 }
 .dropdownToggle::after {
-  content: url('./icons/arrow.svg');
+  content: url('../icons/arrow.svg');
   position: absolute;
   top: 50%;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
 }
+
 .dropdownItem{
   position: relative;
   padding-left: 20px;
@@ -106,7 +107,7 @@
   color: #fff;
 }
 .dropdownCityBtn::after {
-  content: url('./icons/arrow45.svg');
+  content: url('../icons/arrow45.svg');
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -114,13 +115,13 @@
   transition: all ease .3s;
 
 }
-.dropdownCityBtnActive::after {
-  content: url('./icons/arrow45.svg');
+.dropdownCityBtn::after {
+  content: url('../icons/arrow45.svg');
   position: absolute;
   top: 30%;
   transform: rotate(-90deg);
-
 }
+
 .dropdownCityMenu{
   background-color:#2A2A2F;
   border-radius: 0 0 8px 8px;
@@ -143,4 +144,5 @@
 .dropdownLinkCity {
   color: #fff;
 }
+836 - sidebar
  */

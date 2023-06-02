@@ -13,6 +13,8 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
         if (!menuRef?.current?.contains(e.target as Node)) {
             setActive(false);
           }
+        
+        
     }
     useEffect(() => {
         window.addEventListener('click', handleClickOutside )
@@ -40,7 +42,10 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
                  ${isActive && type === 'cities' &&styles.dropdownCityBtnActive}
                 `}
             >
-                {type === 'cities'?'Выбирите ваш город':list[0]}
+                {
+                    type === 'cities' ? 'Выбирите ваш город' : list[0]
+                }
+
             </button>
             <ul className={`
                 ${styles.dropdownMenu} 

@@ -1,0 +1,26 @@
+.list {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+    position: relative;
+}
+
+.item {
+    padding: 7px 11px;
+    background: #F1F1F1;
+    border-radius: 100px;
+    width: 38px;
+    height: 37px;
+}
+
+.basketValue {
+    position: absolute;
+    background: #C83A2E;
+    border-radius: 3px;
+    font-size: 5px;
+    color: #fff;
+    padding: 6px;
+    top: -1px;
+    right: 1px;
+}
