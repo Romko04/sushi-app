@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { linksLystType } from '../../../types/types';
 const Nav:React.FC = () => {
-    type linkType = {
-        title: string,
-        link:string
-    }
-    const links:linkType[] = [
+    const links:linksLystType[] = [
         {title: 'Главная', link:"/"},
         {title: 'Меню', link:"menu"},
         {title: 'О нас', link:"about"},

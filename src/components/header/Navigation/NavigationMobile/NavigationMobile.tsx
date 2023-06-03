@@ -1,15 +1,12 @@
-import React, { ReactElement } from "react"
+import React from "react"
 import {ReactComponent as User} from '../../icons/headerMobile/user.svg'
 import {ReactComponent as Phone} from '../../icons/headerMobile/phone.svg'
 import {ReactComponent as Location} from '../../icons/headerMobile/location.svg'
 import {ReactComponent as Basket} from '../../icons/headerMobile/basket.svg'
-
 import styles from './NavigationMobile.module.css'
+import { componentsLystType } from "../../../../types/types"
 const NavigationMobile = () => {
-    type linkLystType= {
-        component: ReactElement, link: string
-    }
-    const linksLyst:linkLystType[] = [
+    const linksLyst:componentsLystType[] = [
         {component: <Phone />, link:"user"},
         {component: <Location/>, link:"phone"},
         {component: <Basket/>, link:"location"},

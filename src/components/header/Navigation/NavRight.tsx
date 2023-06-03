@@ -1,14 +1,11 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import {ReactComponent as User} from '../icons/userRight.svg'
 import {ReactComponent as Basket} from '../icons/headerMobile/basket.svg'
 import { Link } from 'react-router-dom';
-
-
+import { componentsLystType } from '../../../types/types';
 const NavRight:React.FC = () => {
-    type linkLystType= {
-        component: ReactElement, link: string
-    }
-    const linksLyst:linkLystType[] = [
+
+    const linksLyst:componentsLystType[] = [
         {component: <User className='header__right-nav__list-item_img'/>, link:"user"},
         {component: <Basket className='header__right-nav__list-item_img'/>, link:"basket"},
         ]

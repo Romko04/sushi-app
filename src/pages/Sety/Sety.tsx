@@ -3,7 +3,8 @@ import Product from '../../assets/img/menupage/menuimg.jpg'
 const Sety = () => {
     return (
         <>
-        sety</>
+        sety
+        </>
     )
 }
 export default Sety
