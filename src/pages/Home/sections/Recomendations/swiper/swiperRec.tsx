@@ -9,7 +9,13 @@ export default () => {
     <Swiper
       modules={[Navigation]}
       spaceBetween={10}
-      slidesPerView={4}
+      slidesPerView={1}
+      breakpoints={{
+        1229: {
+          slidesPerView: 4,
+          spaceBetween: 30
+        }
+      }}
       navigation={{
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next',

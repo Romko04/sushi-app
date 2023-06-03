@@ -3,6 +3,7 @@ import Map from '../../../../assets/img/home/shipping/map.jpg'
 const Shipping: React.FC = () => {
     return (
         <section className="shipping">
+            <div className="container">
             <div className="shipping__content-text content-text">
                 <h2 className="title shipping__title">
                     Куда мы доставляем?
@@ -31,6 +32,7 @@ const Shipping: React.FC = () => {
             </div>
             <div className="shipping__btn">
                 <button className="button">Детальная информация</button>
+            </div>
             </div>
         </section>
     )

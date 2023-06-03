@@ -29,7 +29,7 @@
   }
 
   &__right-nav__list-item_img {
-    &:hover {
+    &:hover *{
       fill: #C83A2E;
     }
   }
@@ -52,6 +52,7 @@
 .nav {
   &__body-items {
     display: flex;
+    position: relative;
     gap: 50px;
     @media (max-width: 1521px) {
       display: none;

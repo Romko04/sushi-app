@@ -4,7 +4,11 @@
     background: #716b6b;
     bottom: 10px;
     position: relative;
-  
+    @media (max-width: 450px) {
+      bottom: 7px;
+      height: 7px;
+      width: 7px;
+    }
   }
   
   .swiper-pagination-bullet-active {
