@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import {ReactComponent as User} from '../icons/userRight.svg'
 import {ReactComponent as Basket} from '../icons/headerMobile/basket.svg'
+import { Link } from 'react-router-dom';
 
 
 const NavRight:React.FC = () => {
@@ -19,7 +20,7 @@ const NavRight:React.FC = () => {
                     {linksLyst.map((item, index) => {
                         return (
                             <li key={index} className="nav__menu-item">
-                                <a href={`#${item.link}`} className="nav__link">{item.component}</a>
+                                <Link to={`${item.link}`} className="nav__link">{item.component}</Link>
                             </li>
                         )
                     })}

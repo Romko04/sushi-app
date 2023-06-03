@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 const Nav:React.FC = () => {
     type linkType = {
         title: string,
         link:string
     }
     const links:linkType[] = [
-        {title: 'Главная', link:"main"},
+        {title: 'Главная', link:"/"},
         {title: 'Меню', link:"menu"},
         {title: 'О нас', link:"about"},
         {title: 'Доставка', link:"shipping"},
@@ -19,7 +20,7 @@ const Nav:React.FC = () => {
                     {links.map((i, index) => {
                         return (
                             <li key={index} className="nav__menu-item">
-                                <a href={`#${i.link}`} className="nav__link">{i.title}</a>
+                                <Link className='nav__link' to={i.link}>{i.title}</Link>
                             </li>
                         )
                     })}

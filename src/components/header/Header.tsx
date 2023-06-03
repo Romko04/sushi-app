@@ -6,6 +6,7 @@ import DropDown from './DropDown/DropDown';
 import NavigationMobile from './Navigation/NavigationMobile/NavigationMobile';
 import Nav from './Navigation/Nav';
 import NavRight from './Navigation/NavRight';
+import { Link } from 'react-router-dom';
 const Header = () => {
     type dropDownsType = {
         numbers: string[],
@@ -32,14 +33,14 @@ const Header = () => {
     }, []);
     return (
         <header className="header">
-            <a className="header__logo" href="./index.html">
+            <Link className="header__logo" to='/'>
             {
             windowWidth > 999 
             ?<img className="header__logo-img" src={Logo} alt="logo"></img>
             :<img className="header__logo-img" src={LogoMobile} alt="logo"></img>
             }
                 
-            </a>
+            </Link>
             <Nav />
             {
                 windowWidth > 893 
