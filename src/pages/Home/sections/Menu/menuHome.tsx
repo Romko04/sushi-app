@@ -39,7 +39,7 @@ const MenuHome = () => {
                             {menuList.map((src,index:number)=>{
                                 return (
                                     <li key={index} className="menu__navigaton-item">
-                                    <a href="" className="menu__navigaton-link"><img src={src} alt="" className="menu__navigaton-img" /></a>
+                                    <a href="#" className="menu__navigaton-link"><img src={src} alt="" className="menu__navigaton-img" /></a>
                                 </li>
                                 )
                             })}

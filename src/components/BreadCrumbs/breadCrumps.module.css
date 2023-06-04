@@ -1,0 +1,66 @@
+.breadCrumbs{
+    margin-bottom: 88px;
+}
+.list {
+    display: flex;
+    gap: 30px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.item {
+    position: relative;
+}
+
+.link {
+    font-family: 'TT Hoves';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #C0C0C0;
+    position: relative;
+}
+
+.link:hover {
+    color: #F03C1F;
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 7px;
+    top: 50%;
+    bottom: 0;
+    right: -20px;
+    background-color: #C0C0C0;
+}
+
+.item:last-child::after {
+    display: none;
+}
+
+.button {
+    background: #F8F8F8;
+    border-radius: 280px;
+    padding: 14px 18px;
+}
+
+.arrow * {
+    stroke: #000;
+    transform: rotate(90) scaleY(-1);
+}
+
+.arrow {
+    transform: rotateY(180deg);
+}
+
+.button:hover  {
+    background-color: #F03C1F;
+}
+.button:hover *  {
+    stroke: #fff;
+}

@@ -7,9 +7,7 @@ import Sousy from './img/sousy.jpg'
 import Drinks from './img/drinks.jpg'
 import Salats from './img/salats.png'
 import { linksLystType } from "../../types/types"
-import { Link } from "react-router-dom"
-
-
+import { Link  } from "react-router-dom"
 const Menu = () => {
     const menuList:linksLystType[] = [
         {title:'Сеты ', linkImg: Sety, link: 'sety'},
@@ -28,7 +26,7 @@ const Menu = () => {
                     <ul className="menu__navigation-list">
                         {menuList.map((item,index)=>{
                             return (
-                                <li className="menu__navigation-item">
+                                <li key={index} className="menu__navigation-item">
                                 <Link to={item.link} className="menu__navigation-link">
                                     <img src={item.linkImg} alt="Сети" className="menu__navigation-img" />
                                     <span className="menu__navigation-text">{item.title}</span>

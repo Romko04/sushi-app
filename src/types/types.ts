@@ -6,3 +6,10 @@ export type componentsLystType= {
 export type linksLystType= {
     title: string, linkImg?:string, link: string
 }
+export  type locationType = {
+    hash: string
+    key: string
+    pathname: string
+    search: string
+    state: null
+}

@@ -1,10 +1,9 @@
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Slide1 from '../../../../../assets/img/home/swiper2/slide1.svg'
 import './swiperRec.scss'
 import { Navigation } from 'swiper';
-export default () => {
+export const SwiperRec = () => {
   return (
     <Swiper
       modules={[Navigation]}
@@ -46,3 +45,4 @@ export default () => {
     </Swiper>
   );
 };
+export default SwiperRec

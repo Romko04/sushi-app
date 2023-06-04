@@ -17,7 +17,7 @@ const NavRight:React.FC = () => {
                     {linksLyst.map((item, index) => {
                         return (
                             <li key={index} className="nav__menu-item">
-                                <Link to={`${item.link}`} className="nav__link">{item.component}</Link>
+                                <Link to={`/${item.link}`} className="nav__link">{item.component}</Link>
                             </li>
                         )
                     })}

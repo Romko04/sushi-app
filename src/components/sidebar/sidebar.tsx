@@ -19,7 +19,7 @@ const Sidebar = () => {
                 <ul className="sidebar__navigation-list">
                     {icons.map((Icon,index)=>(
                     <li key={index} className="sidebar__navigation-item">
-                        <a href="" className="sidebar__navigation-item--link">
+                        <a href="#" className="sidebar__navigation-item--link">
                         <Icon className='sidebar__navigation-item--img' key={index}/>
                         </a>
                     </li>
