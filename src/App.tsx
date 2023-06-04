@@ -9,6 +9,7 @@ import Menu from './pages/Menu/Menu';
 import Basket from './pages/Basket/Home';
 import BreadCrumbs from './components/BreadCrumbs/BreadCrumbs';
 import { locationType } from './types/types';
+import Sety from './pages/Sety/Sety';
 
 const  App =()=> {
   const location:locationType = useLocation()
@@ -24,6 +25,7 @@ const  App =()=> {
             <Route path='/' Component={Home}  />
             <Route path='/menu' Component={Menu}  />
             <Route path='/basket' Component={Basket}  />
+            <Route path='/sety' Component={Sety}  />
           </Routes>
         </div>
       </main>
