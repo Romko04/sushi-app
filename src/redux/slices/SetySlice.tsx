@@ -1,18 +1,28 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { SetsType } from '../../types/types'
 import { productsApi } from '../../api/api'
-
+export type sortListType = {
+  [key:string]: string
+}
 export interface initialStateType {
   sety: SetsType[] | []
+  sortValues: sortListType,
+  activeSortIndex: number
 }
 const initialState: initialStateType = {
-  sety: []
+  sety: [],
+  sortValues: {
+      rating: "Популярності",
+      price: "Ціною",
+      name: "Алфавітом"
+  },
+  activeSortIndex: 0
 }
 export const fetchSets = createAsyncThunk(
   'sety/fetch',
-  async () => {
-    const response = await productsApi.getSets()
-    return response 
+  async (sort: string = '') => {
+    const response = await productsApi.getSets(sort)
+    return response
   }
 )
 export const setySlice = createSlice({
@@ -21,6 +31,9 @@ export const setySlice = createSlice({
   reducers: {
     setProducts: (state, action) => {
       state.sety = action.payload
+    },
+    setIndexSort: (state, action) => {
+      state.activeSortIndex = action.payload
     }
   },
   extraReducers: (builder) => {
@@ -34,12 +47,11 @@ export const setySlice = createSlice({
       })
     builder.addCase(
       fetchSets.rejected, (state, action) => {
-        console.log('Errror');
-
+        alert('Вибачте, щось пішло не так')
       })
   }
 })
 
-export const { setProducts } = setySlice.actions
+export const { setProducts, setIndexSort } = setySlice.actions
 
 export default setySlice.reducer

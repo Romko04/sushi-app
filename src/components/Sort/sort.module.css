@@ -1,0 +1,64 @@
+.sort {
+    position: relative;
+    display: inline-block;
+}
+
+.sortValue {
+    position: relative;
+    display: block;
+    padding: 18px 240px 18px 30px;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    border: 2px solid #F3F3F3;
+    letter-spacing: -0.07em;
+    border-radius: 11px;
+    border: 2px solid #F3F3F3;
+    color: #3D3D3D;
+    cursor: pointer;
+}
+.sortValue::after{
+    content: url('./img/arrow.svg');
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    transition: all .4s ease;
+}
+.sortValueActive::after{
+    transform: translateY(50%); rotate: -180deg;
+}
+
+.sortList {
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 120%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all .6s ease;
+}
+.listActive{
+    display: block;
+}
+.item {
+    padding: 10px;
+    padding-left: 30px;
+
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: #f1f1f1;
+    color: #C83A2E;
+}
+.itemActive{
+    background-color: #f1f1f1;
+}

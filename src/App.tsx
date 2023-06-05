@@ -1,7 +1,7 @@
 import React from 'react';
 import './scss/app.scss';
 import Header from './components/header/Header';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import Sidebar from './components/sidebar/sidebar';
 import { Route, Routes, useLocation } from 'react-router-dom';

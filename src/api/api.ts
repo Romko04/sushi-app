@@ -7,8 +7,8 @@ interface getSetsApi {
     data: SetsType[]
 }
 export const productsApi = {
-    getSets: async () => {
-        const res: getSetsApi = await instance.get('items')
+    getSets: async (sort:string) => {
+        const res: getSetsApi = await instance.get('items?'+`sortBy=${sort}`)
         return res.data
     }
 }

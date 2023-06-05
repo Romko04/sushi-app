@@ -115,7 +115,7 @@
   transition: all ease .3s;
 
 }
-.dropdownCityBtn::after {
+.dropdownCityBtnActive::after {
   content: url('../icons/arrow45.svg');
   position: absolute;
   top: 30%;
