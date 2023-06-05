@@ -13,3 +13,10 @@ export  type locationType = {
     search: string
     state: null
 }
+export type SetsType = {
+    id: number,
+    name: string,
+    description: string[],
+    price: number,
+    image: string
+  }

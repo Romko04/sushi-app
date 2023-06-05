@@ -21,4 +21,18 @@
 }
 .product__card{
     width: 24%;
+    &-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 150px;
+        overflow-y: scroll;
+        box-shadow: linear-gradient(180deg, #000000 -297.92%, rgba(0, 0, 0, 0) 108.33%);
+
+    }
+    &-text::-webkit-scrollbar {
+        width: 0.2em; /* Задаємо ширину скролбара (можна збільшити, якщо потрібно) */
+
+      }
+     
 }

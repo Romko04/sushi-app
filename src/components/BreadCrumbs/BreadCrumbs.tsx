@@ -7,7 +7,7 @@ import { ReactComponent as Arrow } from "./img/arrowmenu.svg"
 const BreadCrumbs = () => {
 
     const location: locationType = useLocation()
-    const links = location.pathname.split('/')
+    const links = location.pathname.split('/').filter(i => i !== '')
     const handleGoBack = () => {
         window.history.back();
     };
@@ -23,11 +23,15 @@ const BreadCrumbs = () => {
                             <Link className={styles.link} to={'/'}>Home</Link>
                         </li>
                         {
-                            links.filter(i => i !== '')
+                            links
                                 .map((item, index) => {
                                     return (
                                         <li key={index} className={styles.item}>
-                                            <Link className={styles.link} to={`/${item}`}>{item}</Link>
+                                            {
+                                            links.length - 1 === index
+                                            ? <span className={styles.link}>{item}</span> 
+                                            : <Link className={styles.link} to={`/${item}`}>{item}</Link>
+                                            }
                                         </li>
                                     )
                                 })
