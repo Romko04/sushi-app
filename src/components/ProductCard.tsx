@@ -1,7 +1,7 @@
-import { SetsType } from "../types/types";
+import { ProductsType } from "../types/types";
 
 
-const ProductCard:React.FC<SetsType> = ({name,image,description,price}) => {
+const ProductCard:React.FC<ProductsType> = ({name,image,description,price}) => {
     return (
         <div className=" product__card">
             <a href="./product.html" className="swiper__slide-img product__card-img">

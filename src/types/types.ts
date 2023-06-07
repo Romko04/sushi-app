@@ -13,7 +13,7 @@ export  type locationType = {
     search: string
     state: null
 }
-export type SetsType = {
+export type ProductsType = {
     id: number,
     name: string,
     description: string[],

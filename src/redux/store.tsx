@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import setySlice from './slices/SetySlice'
+import productSlice from './slices/ProductsSlice'
 export const store = configureStore({
   reducer: {
-    sety: setySlice
+    sets: productSlice
   },
 })
 

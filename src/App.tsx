@@ -9,10 +9,13 @@ import Menu from './pages/Menu/Menu';
 import Basket from './pages/Basket/Home';
 import BreadCrumbs from './components/BreadCrumbs/BreadCrumbs';
 import { locationType } from './types/types';
-import Sety from './pages/Sets/Sets';
+import ProductsPage from './pages/ProductsPage/ProductsPage';
+import { useSelector } from 'react-redux';
+import { RootState } from './redux/store';
 
 const  App =()=> {
   const location:locationType = useLocation()
+  const {products, sortValues, activeSortIndex} = useSelector((state:RootState)=>state.sets)
   const links = location.pathname.split('/').filter(i => i!=='')
   return (
     <div className="wrapper">
@@ -25,8 +28,7 @@ const  App =()=> {
             <Route path='/' Component={Home}  />
             <Route path='/menu' Component={Menu}  />
             <Route path='/basket' Component={Basket}  />
-            <Route path='/menu/sety' Component={Sety}  />
-            <Route path='/sety' Component={Sety}  />
+            <Route path="/menu/:breakpoint" element={<ProductsPage title="Сети" products={products} sortItems={sortValues} activeSortIndex={activeSortIndex} />} />
           </Routes>
         </div>
       </main>
