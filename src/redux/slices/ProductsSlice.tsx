@@ -14,7 +14,7 @@ const initialState: initialStateType = {
   sortValues: {
       rating: "Популярності",
       price: "Ціною",
-      name: "Алфавітом"
+      asc: "Алфавітом"
   },
   activeSortIndex: 0
 }
@@ -34,13 +34,15 @@ export const productsSlice = createSlice({
     },
     setIndexSort: (state, action) => {
       state.activeSortIndex = action.payload
+    },
+    deleteIndexSort: (state) => {
+      state.activeSortIndex = 0
     }
   },
   extraReducers: (builder) => {
     builder.addCase(
       fetchProducts.pending, (state, action) => {
         state.products = []
-        state.activeSortIndex = 0
       })
     builder.addCase(
       fetchProducts.fulfilled, (state, action) => {
@@ -53,6 +55,6 @@ export const productsSlice = createSlice({
   }
 })
 
-export const { setProducts, setIndexSort } = productsSlice.actions
+export const { setProducts, setIndexSort,deleteIndexSort } = productsSlice.actions
 
 export default productsSlice.reducer

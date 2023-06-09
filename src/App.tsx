@@ -16,7 +16,6 @@ import ProductPage from './pages/ProductPage/ProductPage';
 
 const  App =()=> {
   const location:locationType = useLocation()
-  const {products, sortValues, activeSortIndex} = useSelector((state:RootState)=>state.products)
   const links = location.pathname.split('/').filter(i => i!=='')
   return (
     <div className="wrapper">
@@ -29,7 +28,7 @@ const  App =()=> {
             <Route path='/' Component={Home}  />
             <Route path='/menu' Component={Menu}  />
             <Route path='/basket' Component={Basket}  />
-            <Route path="/menu/:breakpoint" element={<ProductsPage title="Сети" products={products} sortItems={sortValues} activeSortIndex={activeSortIndex} />} />
+            <Route path="/menu/:breakpoint" element={<ProductsPage/>} />
             <Route path="/menu/:breakpoint/:id?" element={<ProductPage/>} />
           </Routes>
         </div>

@@ -1,18 +1,20 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { RootState } from '../../redux/store';
+import { AppDispatch, RootState } from '../../redux/store';
 import { ReactComponent as Minus } from './img/minus.svg';
 import { ReactComponent as Plus } from './img/plus.svg';
 import Recommendations from '../Home/sections/Recomendations/Recommendations';
-
-const ProductPage = () => {
+import { fetchProducts } from '../../redux/slices/ProductsSlice';
+const ProductPage:React.FC= () => {
     const { products } = useSelector((state: RootState) => state.products)
+    const dispatch:AppDispatch = useDispatch()
+    const {breakpoint,id} = useParams()
     let product
-    const { id } = useParams()
-    if (id) {
-        product = products.find(item => item.id === +id)
-    }
+    useEffect(()=>{
+        if (products.length < 1 && breakpoint) dispatch(fetchProducts({product:breakpoint, sort:''}))
+    },[products.length,breakpoint,dispatch])
+    if (id) product = products.find(item => item.id === +id)
     return (
         <>
             <section className="product">
