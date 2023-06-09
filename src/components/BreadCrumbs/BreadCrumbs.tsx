@@ -6,8 +6,9 @@ import { locationType } from "../../types/types"
 import { ReactComponent as Arrow } from "./img/arrowmenu.svg"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
+import { useTranslation } from "react-i18next"
 const BreadCrumbs = () => {
-
+    const { t } = useTranslation();
     const location: locationType = useLocation()
     const links = location.pathname.split('/').filter(i => i !== '')
     const { products } = useSelector((state: RootState) => state.products)
@@ -23,7 +24,7 @@ const BreadCrumbs = () => {
                     </button>
                     <ul className={styles.list}>
                         <li className={styles.item}>
-                            <Link className={styles.link} to={'/'}>Home</Link>
+                            <Link className={styles.link} to={'/'}>{t('home')}</Link>
                         </li>
                         {
                             links.map((item, index) => {
@@ -31,15 +32,15 @@ const BreadCrumbs = () => {
                                     !isNaN(+item) ? (
                                         <li key={index} className={styles.item}>
                                             <span className={styles.link}>{
-                                                    products.find(product => product.id === +item )?.name.toLowerCase()
+                                                    products.find(product => product.id === +item )?.name
                                             }</span>
                                         </li>
                                     ) : (
                                         <li key={index} className={styles.item}>
                                             {links.length - 1 === index ? (
-                                                <span className={styles.link}>{item}</span>
+                                                <span className={styles.link}>{t(item)}</span>
                                             ) : (
-                                                <Link className={styles.link} to={item === 'menu'?'menu/':`menu/${item}`}>{item}</Link>
+                                                <Link className={styles.link} to={item === 'menu'?'menu/':`menu/${item}`}>{t(item)}</Link>
                                             )}
                                         </li>
                                     )
