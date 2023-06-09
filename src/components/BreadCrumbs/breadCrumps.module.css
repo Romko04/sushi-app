@@ -3,7 +3,7 @@
 }
 .list {
     display: flex;
-    gap: 30px;
+    gap: 14px;
 }
 .nav{
     display: flex;
@@ -32,10 +32,10 @@
     content: '';
     position: absolute;
     height: 1px;
-    width: 7px;
+    width: 6px;
     top: 50%;
     bottom: 0;
-    right: -20px;
+    right: -10px;
     background-color: #C0C0C0;
 }
 

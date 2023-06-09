@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import productSlice from './slices/ProductsSlice'
 export const store = configureStore({
   reducer: {
-    sets: productSlice
+    products: productSlice
   },
 })
 

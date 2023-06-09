@@ -5,7 +5,7 @@ import { fetchProducts, sortListType } from "../../redux/slices/ProductsSlice";
 import { AppDispatch } from "../../redux/store";
 import Sort from "../../components/Sort/Sort";
 import { ProductsType } from "../../types/types";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 interface ProductsPagePropsType {
     title: string,
     products: ProductsType[],
@@ -14,22 +14,22 @@ interface ProductsPagePropsType {
 }
 const ProductsPage:React.FC<ProductsPagePropsType> = ({title,products,sortItems,activeSortIndex}) => {
     const dispatch: AppDispatch = useDispatch()
-    const {breakpoint} = useParams<string>()
+    const {breakpoint, id} = useParams<string>()
     useEffect(() => {
         const keys = Object.keys(sortItems)
         if (breakpoint !== undefined) dispatch(fetchProducts({product:breakpoint,sort:keys[activeSortIndex]}))
     }, [])
     return (
-        <section className="sety">
+        <section className="product">
             <div className="container">
-                <div className="sety__content-text content-text">
-                    <h2 className="title sety__title">
+                <div className="product__content-text content-text">
+                    <h2 className="title product__title">
                         {title}
                     </h2>
                     <Sort breakpoint={breakpoint} sortItems={sortItems} activeSortIndex={activeSortIndex}/>
                 </div>
-                <div className="sety__content">
-                    {products.length > 1 && products.map((item, index: number) => <ProductCard key={index} {...item} />)}
+                <div className="product__content-items">
+                    {products.length > 1 && products.map((item, index: number) => <Link className="product__content-link" to={''+item.id}><ProductCard key={index} {...item} /></Link>)}
                 </div>
             </div>
         </section>

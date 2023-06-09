@@ -1,26 +1,89 @@
+.product {
+    &__content {
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        gap: 69px;
+    }
 
-.sety{
+    &__description-title {
+        margin-bottom: 60px;
+    }
+
+    &__description-text {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        height: 279px;
+        width: 778px;
+        color: #000000;
+        display: flex;
+
+    }    
+    &__description-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 120px;
+    }
+    &__description-item{
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+    }
+
+    &__order {
+        display: flex;
+        align-items: flex-end;
+        gap: 40px;
+    }
+
+    &__order-price {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 130.3%;
+        /* identical to box height, or 39px */
+
+
+        color: #000000;
+    }
+}
+.product{
     &__content-text{
         display: flex;
         justify-content: space-between;
         margin-top: 88px;
         align-items: center;
-        margin-bottom: 170px;
-
     }
-    &__content{
+    &__content-items{
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         margin-bottom: 150px;
     }
-    &__swiper-slide{
+    &__content{
+        display: flex;
+        gap: 10px;
+    }
+    &__content-link{
         width: 24%;
         display: block;
+
     }
-}
+    
+    
 .product__card{
-    width: 24%;
+    width: 100%;
+    cursor: pointer;
+    transition: all .2s ease-in;
     &-text{
         display: flex;
         flex-direction: column;
@@ -34,5 +97,110 @@
         width: 0.2em; /* Задаємо ширину скролбара (можна збільшити, якщо потрібно) */
 
       }
-     
+      &__card-content{
+        display: block;
+        width: 100%;
+    }
+    &:hover{
+        scale: 1.02;
+    }
 }
+}
+.product {
+    &__content {
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        gap: 69px;
+    }
+
+    &__description-title {
+        margin-bottom: 60px;
+    }
+
+    &__description-text {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        height: 279px;
+        width: 778px;
+        color: #000000;
+        display: flex;
+
+    }    
+    &__description-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 120px;
+    }
+    &__description-item{
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+    }
+
+    &__order {
+        display: flex;
+        align-items: flex-end;
+        gap: 40px;
+    }
+
+    &__order-price {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 130.3%;
+        /* identical to box height, or 39px */
+
+
+        color: #000000;
+    }
+}
+.product__counter {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .product__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .product__order-btn {
+    background-color: $hover-color;
+  }
+  
+  .product__counter-value {
+    padding: 16px 32px;
+    line-height: 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background: #2A2A2F;
+    border-radius: 200px;
+  }
+  
+  .product__counter-btn {
+    padding: 0;
+    height: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 47px;
+    &::after {
+      content: '';
+    }
+  
+
+  }
+  
