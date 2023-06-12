@@ -1,4 +1,3 @@
-import React from 'react';
 import './scss/app.scss';
 import Header from './components/header/Header';
 import Footer from './components/Footer';
@@ -6,12 +5,10 @@ import Home from './pages/Home/Home';
 import Sidebar from './components/sidebar/sidebar';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Menu from './pages/Menu/Menu';
-import Basket from './pages/Basket/Home';
+import Basket from './pages//Basket/Basket';
 import BreadCrumbs from './components/BreadCrumbs/BreadCrumbs';
 import { locationType } from './types/types';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
-import { useSelector } from 'react-redux';
-import { RootState } from './redux/store';
 import ProductPage from './pages/ProductPage/ProductPage';
 
 const  App =()=> {

@@ -1,0 +1,260 @@
+.basket {
+    width: 100%;
+    &__container{
+        width: 100%;
+    }
+    &__wrapper{
+        display: flex;
+    }
+    &__order-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    &__login {
+        background-color: #F8F8F8;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 20px 40px;
+        margin-bottom: 100px;
+    }
+
+    &__login-title {
+        font-family: 'TT Hoves';
+        margin-bottom: 10px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 23px;
+        line-height: 27px;
+        /* identical to box height */
+        color: #000000;
+    }
+
+    &__login-text {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+    }
+
+    &__login-btn {
+        padding: 15px 40px;
+
+        &::after {
+            content: '';
+        }
+    }
+
+    &__order-top-title {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 33px;
+        line-height: 95%;
+        /* or 31px */
+
+        letter-spacing: -0.06em;
+
+        color: #000000;
+    }
+
+    &__order-top-count {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        /* identical to box height */
+
+
+        color: #5F5F5F;
+    }
+
+    &__order-top {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 50px;
+    }
+
+    &__order-item {
+        display: flex;
+        background-color: #F8F8F8;
+        justify-content: space-between;
+        border-radius: 11px;
+        img{
+            height: 150px;
+            width: 150px;
+            border-radius: 11px;
+            object-fit: cover;
+        }
+    }
+
+    &__order-item__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+    }
+
+    &__order-item__content-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__order-item__content-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__order-item__title {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 27px;
+        /* identical to box height */
+
+
+        color: #000000;
+    }
+
+    &__order-item__price {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 130.3%;
+        /* identical to box height, or 30px */
+
+
+        color: #000000;
+
+    }
+
+}
+.data{
+    padding: 200px 0;
+    &__title{
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 33px;
+        line-height: 95%;
+        /* or 31px */
+
+        letter-spacing: -0.06em;
+        margin-bottom: 50px;
+        color: #000000;
+    }
+    &--form{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 26px;
+    }
+
+    &__form-textarea--comments{
+        height: 199px;
+        padding: 20px 0 118px 25px;
+        background: #F8F8F8;
+        border-radius: 11px;
+        resize: none;
+    }
+}
+.shipping{
+    padding-bottom: 150px;
+    &__types{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 70px;
+    }
+    &__input{
+        background: #FFFFFF;
+        border: 2px solid #F3F3F3;
+        border-radius: 11px;
+        &::placeholder{
+            font-family: 'TT Hoves';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: -0.07em;
+
+            color: #C0C0C0;
+        }
+    }
+    &__type{
+        background: #F8F8F8;
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        cursor: pointer;
+        height: 55px;
+        align-items: center;
+        &-active--type{
+             background: #F03C1F;
+            color: #fff;
+        }
+        &-right{
+            border-radius: 0px 12px 12px 0px;
+        }
+        &-left{
+            border-radius: 12px 0px 0px 12px;
+        }
+    }
+}
+.sidebar{
+    &__title{
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 23px;
+        line-height: 27px;
+        /* identical to box height */
+        color: #000000;
+    }
+    &__container{
+        padding: 40px;
+        background: #F8F8F8;
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    &__check-item__price{
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        color: #5F5F5F;
+
+    }
+    &__check-result{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 26px;
+        /* identical to box height */
+
+
+        color: #000000;
+    }
+    &__check-item{
+        display: flex;
+        justify-content: space-between;
+        width: 315px;
+
+    }
+}

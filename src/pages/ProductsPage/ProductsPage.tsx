@@ -6,28 +6,24 @@ import { AppDispatch, RootState } from "../../redux/store";
 import Sort from "../../components/Sort/Sort";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
 const ProductsPage: React.FC = () => {
-    const {products,sortValues,activeSortIndex} = useSelector((state:RootState)=>state.products)
+    const {products,sortValues,activeSortIndex,typeProduct} = useSelector((state:RootState)=>state.products)
     const dispatch: AppDispatch = useDispatch()
     const { t } = useTranslation()
-    const { breakpoint } = useParams<string>()
+    const { breakpoint } = useParams()
     const location = useLocation()
     const keys = Object.keys(sortValues)
     useEffect(() => {
-        debugger
         const searchParams = new URLSearchParams(location.search);
         const sortParam = searchParams.get('sort');
         if (sortParam){
-           if (breakpoint) {
-            dispatch(fetchProducts({ product: breakpoint, sort: sortParam}))
+            dispatch(fetchProducts({ product: breakpoint as string, sort: sortParam}))
             dispatch(dispatch(setIndexSort(keys.indexOf(sortParam))))
-           }
         } 
         else {
-            if (breakpoint) {
                 dispatch(deleteIndexSort())
-                dispatch(fetchProducts({ product: breakpoint, sort: keys[activeSortIndex]}))
-            }
+                dispatch(fetchProducts({ product: breakpoint as string, sort: keys[activeSortIndex]}))
         }
     }, [])
     return (
@@ -35,12 +31,12 @@ const ProductsPage: React.FC = () => {
             <div className="container">
                 <div className="product__content-text content-text">
                     <h2 className="title product__title">
-                        {t(breakpoint + '')}
+                        {t(typeProduct + '')}
                     </h2>
-                    <Sort breakpoint={breakpoint} sortValues={sortValues} activeSortIndex={activeSortIndex} />
+                    <Sort breakpoint={typeProduct} sortValues={sortValues} activeSortIndex={activeSortIndex} />
                 </div>
                 <div className="product__content-items">
-                    {products.length > 1 && products.map((item, index: number) => <Link className="product__content-link" to={'' + item.id}><ProductCard key={index} {...item} /></Link>)}
+                    {products.length > 1 && products.map((item, index: number) => <ProductCard key={index} {...item} typeProduct={typeProduct} />)}
                 </div>
             </div>
         </section>

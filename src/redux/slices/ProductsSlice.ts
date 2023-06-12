@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { ProductsType } from '../../types/types'
 import { getProducts } from '../../api/api'
 export type sortListType = {
@@ -6,8 +6,9 @@ export type sortListType = {
 }
 export interface initialStateType {
   products: ProductsType[] | []
-  sortValues: sortListType,
+  sortValues: sortListType
   activeSortIndex: number
+  typeProduct:string
 }
 const initialState: initialStateType = {
   products: [],
@@ -16,22 +17,20 @@ const initialState: initialStateType = {
       price: "Ціною",
       asc: "Алфавітом"
   },
-  activeSortIndex: 0
+  activeSortIndex: 0,
+  typeProduct: ''
 }
 export const fetchProducts = createAsyncThunk(
   'products/fetch',
   async ({product, sort}:{product:string,sort: string}) => {
     const response = await getProducts(product,sort)
-    return response
+    return {products: response, typeProduct:product}
   }
 )
 export const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    setProducts: (state, action) => {
-      state.products = action.payload
-    },
     setIndexSort: (state, action) => {
       state.activeSortIndex = action.payload
     },
@@ -45,8 +44,9 @@ export const productsSlice = createSlice({
         state.products = []
       })
     builder.addCase(
-      fetchProducts.fulfilled, (state, action) => {
-        state.products = action.payload
+      fetchProducts.fulfilled, (state, action:PayloadAction<{products: ProductsType[], typeProduct:string}>) => {
+        state.products = action.payload.products
+        state.typeProduct = action.payload.typeProduct
       })
     builder.addCase(
       fetchProducts.rejected, (state, action) => {
@@ -55,6 +55,6 @@ export const productsSlice = createSlice({
   }
 })
 
-export const { setProducts, setIndexSort,deleteIndexSort } = productsSlice.actions
+export const { setIndexSort,deleteIndexSort } = productsSlice.actions
 
 export default productsSlice.reducer
