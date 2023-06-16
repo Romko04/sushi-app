@@ -42,7 +42,7 @@ const ProductCounter:React.FC<ProductCounter> = ({product,findBasketProuduct}) =
                 <button onClick={setProductHandleClick} className="button product__order-btn">
                     Добавить в корзину
                 </button>
-                <span className="product__order-price">{product?.price}₴</span>
+                <span className="product__order-price">{product?.price.toFixed(2)}₴</span>
             </div>
         </div>
     )

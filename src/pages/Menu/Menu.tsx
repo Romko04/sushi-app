@@ -11,7 +11,7 @@ import { Link  } from "react-router-dom"
 const Menu:React.FC = () => {
     const menuList:linksLystType[] = [
         {title:'Сеты ', linkImg: Sety, link: 'sets'},
-        {title:'Хосонаки', linkImg: Hosonaki, link: 'philadelphia'},
+        {title:'Філадельфія', linkImg: Hosonaki, link: 'philadelphia'},
         {title:'Урумаки', linkImg: Urumaki, link: 'urumaki'},
         {title:'Нигири', linkImg: Nigiri, link: 'nigiri'},
         {title:'Салати', linkImg: Salats, link: 'salats'},

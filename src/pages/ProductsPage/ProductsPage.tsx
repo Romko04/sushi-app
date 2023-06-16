@@ -6,6 +6,7 @@ import { AppDispatch, RootState } from "../../redux/store";
 import Sort from "../../components/Sort/Sort";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import ProductLoader from "../../components/ProductLoader";
 
 const ProductsPage: React.FC = () => {
     const {products,sortValues,activeSortIndex,typeProduct} = useSelector((state:RootState)=>state.products)
@@ -31,12 +32,15 @@ const ProductsPage: React.FC = () => {
             <div className="container">
                 <div className="product__content-text content-text">
                     <h2 className="title product__title">
-                        {t(typeProduct + '')}
+                        {t(breakpoint + '')}
                     </h2>
                     <Sort breakpoint={typeProduct} sortValues={sortValues} activeSortIndex={activeSortIndex} />
                 </div>
                 <div className="product__content-items">
-                    {products.length > 1 && products.map((item, index: number) => <ProductCard key={index} {...item} typeProduct={typeProduct} />)}
+                    {products.length > 1 
+                    ?products.map((item, index: number) => <ProductCard key={index} {...item} typeProduct={typeProduct} />)
+                    :[...new Array(10)].map((_, index: number) => <ProductLoader key={index}/>)
+                    }
                 </div>
             </div>
         </section>
