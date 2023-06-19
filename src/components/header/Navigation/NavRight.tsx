@@ -6,7 +6,7 @@ import { componentsLystType } from '../../../types/types';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
 const NavRight:React.FC = () => {
-    const {products,totalCount} = useSelector((state:RootState)=>state.basket)
+    const {totalCount} = useSelector((state:RootState)=>state.basket)
     const linksLyst:componentsLystType[] = [
         {component: <User className='header__right-nav__list-item_img'/>, link:"user"},
         {component: <Basket className='header__right-nav__list-item_img'/>, link:"basket"},

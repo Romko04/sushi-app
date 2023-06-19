@@ -1,13 +1,13 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { deincrementProduct, deleteProduct, incrementProduct } from "../../../redux/slices/BasketSlice"
-import { AppDispatch } from "../../../redux/store"
+import { AppDispatch, RootState } from "../../../redux/store"
 import { ProductsBasketType, ProductsType } from "../../../types/types"
 import { ReactComponent as Khrest } from '../img/khrest.svg'
 import { ReactComponent as Minus } from '../img/minus.svg'
 import { ReactComponent as Plus } from '../img/plus.svg'
 import { Link } from "react-router-dom"
-
 const BasketProductCard:React.FC<{item:ProductsBasketType & {counter:number}}> = ({item}) => {
+    const {language} = useSelector((state:RootState) => state.products)
     const dispatch:AppDispatch = useDispatch()
     const incrementhandleClick=(item:ProductsType & {counter:number}) => {
         dispatch(incrementProduct({...item}))
@@ -25,7 +25,7 @@ const BasketProductCard:React.FC<{item:ProductsBasketType & {counter:number}}> =
             </Link>
             <div className="basket__order-item__content">
                 <div className="basket__order-item__content-top">
-                    <h4 className="basket__order-item__title">{item.name}</h4>
+                    <h4 className="basket__order-item__title">{item.name[language]}</h4>
                     <button onClick={() => deletehandleClick(item)} className="button product__counter-btn">
                         {<Khrest />}
                     </button>

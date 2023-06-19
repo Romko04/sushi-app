@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteIndexSort, fetchProducts, setIndexSort } from "../../redux/slices/ProductsSlice";
 import { AppDispatch, RootState } from "../../redux/store";
 import Sort from "../../components/Sort/Sort";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ProductLoader from "../../components/ProductLoader";
 

@@ -1,50 +1,79 @@
-.menu{
-    &__container{
+.menu {
+    &__container {
         padding: 0 25px 0 40px;
     }
-    &__title{
-        margin-bottom: 100px;
-    }
-    &__navigation-list{
+
+    &__navigation-list__home {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         gap: 15px;
     }
-    &__navigation-item{
-        width: 300px;
+
+    &__navigation-item {
+        position: relative;
     }
-    &__navigation-img{
+
+    &__navigation-img__title {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease;
+        z-index: 3;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 23px;
+        line-height: 27px;
+        color: #FFFFFF;
+        border-radius: 17px;
+        &:hover{
+            background-color: red;
+        }
+    }
+    &__navigation-img__title--menu{
+        color: #000000;
+        &:hover{
+            color: #fff;
+        }
+    }
+    &__navigation-img {
         width: 100%;
         height: 238px;
         background: #fff;
     }
-    &__navigation-link{
+
+    &__navigation-link {
         display: flex;
         flex-direction: column;
         align-items: center;
         background: #F8F8F8;
         border-radius: 19px;
-        &:hover{
+
+        &:hover {
             opacity: 1;
             background-color: #F03C1F;
             color: #fff;
         }
     }
-    &__navigation-text{
+
+    &__navigation-text {
         margin: 35px 0;
         font-family: 'TT Hoves';
         font-style: normal;
         font-weight: 400;
         font-size: 30px;
         line-height: 95%;
-        /* or 28px */
-
         letter-spacing: -0.06em;
-
         color: #000000;
     }
-    &__navigation-link:hover &__navigation-text{
+
+    &__navigation-link:hover &__navigation-text {
         color: #fff;
     }
 }

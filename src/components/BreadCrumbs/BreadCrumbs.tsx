@@ -9,6 +9,7 @@ import { RootState } from "../../redux/store"
 import { useTranslation } from "react-i18next"
 const BreadCrumbs = () => {
     const { t } = useTranslation();
+    const {language} = useSelector((state:RootState)=> state.products)
     const location: locationType = useLocation()
     const links = location.pathname.split('/').filter(i => i !== '')
     const { products } = useSelector((state: RootState) => state.products)
@@ -32,7 +33,7 @@ const BreadCrumbs = () => {
                                     !isNaN(+item) ? (
                                         <li key={index} className={styles.item}>
                                             <span className={styles.link}>{
-                                                    products.find(product => product.id === +item )?.name
+                                                    products.find(product => product.id === +item )?.name[language]
                                             }</span>
                                         </li>
                                     ) : (

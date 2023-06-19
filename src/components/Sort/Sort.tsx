@@ -4,12 +4,14 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
 import { fetchProducts, setIndexSort, sortListType } from '../../redux/slices/ProductsSlice';
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 interface SortType {
   breakpoint: string | undefined
   sortValues: sortListType
   activeSortIndex: number
 }
 const Sort: React.FC<SortType> = ({sortValues,activeSortIndex,breakpoint}) => {
+  const {t} = useTranslation()
   const [isActive, setActive] = useState<boolean>(false)
   const dispatch:AppDispatch = useDispatch()
   const navigate = useNavigate();
@@ -42,10 +44,10 @@ const Sort: React.FC<SortType> = ({sortValues,activeSortIndex,breakpoint}) => {
   return (
     <div ref={menuRef} className={styles.sort}>
       <span onClick={handleToggle} className={`${styles.sortValue} ${isActive && styles.sortValueActive}`}>
-        Сортировка за
+        {t('sort')}
       </span>
       <ul className={`${styles.sortList} ${isActive && styles.listActive}`}>
-        {keys.map((i, index) => <li onClick={() => handleClick(index, i)} key={index} className={`${styles.item} ${index === activeSortIndex && styles.itemActive}`}>{sortValues[i]}</li>)}
+        {keys.map((i, index) => <li onClick={() => handleClick(index, i)} key={index} className={`${styles.item} ${index === activeSortIndex && styles.itemActive}`}>{t(sortValues[i])}</li>)}
       </ul>
     </div>
   )

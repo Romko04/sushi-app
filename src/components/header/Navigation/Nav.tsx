@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { linksLystType } from '../../../types/types';
+import { useTranslation } from 'react-i18next';
 const Nav:React.FC = () => {
+    const {t} = useTranslation()
     const links:linksLystType[] = [
-        {title: 'Главная', link:"/"},
-        {title: 'Меню', link:"menu"},
-        {title: 'О нас', link:"about"},
-        {title: 'Доставка', link:"shipping"},
-        {title: 'Алергены', link:"shipping"},
+        {title: t('home'), value:"/"},
+        {title: t('menu'), value:"menu"},
+        {title: t('aboutUs'), value:"about"},
+        {title: t('shipping'), value:"shipping"},
+        {title: t('Allergens'), value:"shipping"},
         ]
     return (
         <nav className="nav">
@@ -17,7 +19,7 @@ const Nav:React.FC = () => {
                     {links.map((i, index) => {
                         return (
                             <li key={index} className="nav__menu-item">
-                                <Link className='nav__link' to={i.link}>{i.title}</Link>
+                                <Link className='nav__link' to={i.value}>{i.title}</Link>
                             </li>
                         )
                     })}

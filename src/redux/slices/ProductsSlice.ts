@@ -9,16 +9,21 @@ export interface initialStateType {
   sortValues: sortListType
   activeSortIndex: number
   typeProduct:string
+  language: "en"| "ua"
+  city: string
 }
 const initialState: initialStateType = {
   products: [],
   sortValues: {
-      rating: "Популярності",
-      price: "Ціною",
-      asc: "Алфавітом"
+      rating: "rating",
+      price: "price",
+      asc: "asc"
   },
   activeSortIndex: 0,
-  typeProduct: ''
+  typeProduct: '',
+  language: 'ua',
+  city: ''
+  
 }
 export const fetchProducts = createAsyncThunk(
   'products/fetch',
@@ -36,7 +41,13 @@ export const productsSlice = createSlice({
     },
     deleteIndexSort: (state) => {
       state.activeSortIndex = 0
-    }
+    },
+    setLanguage: (state, action: PayloadAction<"ua"|"en">) => {
+      state.language = action.payload
+    },
+    setCity: (state, action: PayloadAction<string>) => {
+      state.city = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(
@@ -55,6 +66,6 @@ export const productsSlice = createSlice({
   }
 })
 
-export const { setIndexSort,deleteIndexSort } = productsSlice.actions
+export const { setIndexSort,deleteIndexSort,setLanguage,setCity } = productsSlice.actions
 
 export default productsSlice.reducer

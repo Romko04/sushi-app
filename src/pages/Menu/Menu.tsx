@@ -8,28 +8,29 @@ import Drinks from './img/drinks.jpg'
 import Salats from './img/salats.png'
 import { linksLystType } from "../../types/types"
 import { Link  } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 const Menu:React.FC = () => {
+    const {t} = useTranslation()
     const menuList:linksLystType[] = [
-        {title:'Сеты ', linkImg: Sety, link: 'sets'},
-        {title:'Філадельфія', linkImg: Hosonaki, link: 'philadelphia'},
-        {title:'Урумаки', linkImg: Urumaki, link: 'urumaki'},
-        {title:'Нигири', linkImg: Nigiri, link: 'nigiri'},
-        {title:'Салати', linkImg: Salats, link: 'salats'},
-        {title:'Напитки', linkImg: Drinks, link: 'drinks'},
-        {title:'Соусы', linkImg: Sousy, link: 'sousy'},
+        {title:'Сеты ', linkImg: Sety, value: 'sets'},
+        {title:'Філадельфія', linkImg: Hosonaki, value: 'philadelphia'},
+        {title:'Урумаки', linkImg: Urumaki, value: 'futumaki'},
+        {title:'Салати', linkImg: Salats, value: 'salats'},
+        {title:'Напитки', linkImg: Drinks, value: 'drinks'},
+        {title:'Соусы', linkImg: Sousy, value: 'sauce'},
     ]
     return (
         <section className="menu">
             <div className="menu__container">
-                <h2 className="title menu__title">Меню</h2>
+                <h2 className="title menu__title">{t('menu')}</h2>
                 <nav className="menu__navigation">
-                    <ul className="menu__navigation-list">
+                    <ul className="menu__navigation-list__home">
                         {menuList.map((item,index)=>{
                             return (
                                 <li key={index} className="menu__navigation-item">
-                                <Link to={`${item.link}`} className="menu__navigation-link">
+                                <Link to={`${item.value}`} className="menu__navigation-link">
                                     <img src={item.linkImg} alt="Сети" className="menu__navigation-img" />
-                                    <span className="menu__navigation-text">{item.title}</span>
+                                    <span className="menu__navigation-text">{t(item.value)}</span>
                                 </Link>
                             </li>
                             )

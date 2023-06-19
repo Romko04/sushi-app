@@ -1,24 +1,21 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import translationUK from './locales/uk.json';
-
-const resources = {
-  uk: {
-    translation: translationUK
-  }
-  // Додайте інші мови та файли перекладів за потреби
-};
+import Backend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 i18n
+  .use(Backend)
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    resources,
-    lng: 'uk', // Встановіть мову за замовчуванням
-    fallbackLng: 'uk', // Якщо переклад не знайдений, використовуйте українську мову
+    lng:'ua',
+    fallbackLng: 'ua',
+    debug: true,
     interpolation: {
-      escapeValue: false
+      escapeValue: false, // not needed for react as it escapes by default
     }
   });
+
 
 export default i18n;

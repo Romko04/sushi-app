@@ -1,24 +1,29 @@
 import React from 'react';
-import OurMission from "../../../../assets/img/home/about/img1.svg";
-import OurOrders from "../../../../assets/img/home/about/img2.png";
+import OurMission from "./img/img1.svg";
+import OurOrders from "./img/ordersback.png";
+import { useTranslation } from 'react-i18next';
 
 const AboutUs: React.FC = () => {
+    const { t } = useTranslation()
     return (
         <>
             <section className="aboutUs">
                 <div className="container">
                     <div className="aboutUs__content-text content-text">
                         <h2 className="title aboutUs__title">
-                            Sushi Dream  — это
+                            {t("aboutUs__title")}
                         </h2>
-                        <span className="aboutUs__subtitle subtitle">Больше, чем просто доставка суши. Мы стремимся к тому, чтобы вы получили истинное удовольствие от свежести и вкуса японской кухни</span>
+                        <p className='aboutUs__text'>{t('aboutUs__text')}</p>
                     </div>
                     <div className="aboutUs__content">
                         <div className="aboutUs__content-img__wrapper">
                             <img src={OurMission} alt="ourMission" />
-                            <h4 className="aboutUs__content-img__wrapper-title">Наша миссия — предоставлять продукт по честной цене, уделять ему заботу и внимание. </h4>
+                            <span className="aboutUs__content-img__wrapper-title">{t("aboutUs__content-img__wrapper-title")}</span>
                         </div>
-                        <img src={OurOrders} alt="ourOrders" />
+                        <div className="aboutUs__order-content">
+                            <img src={OurOrders} alt="ourOrders" />
+                            <span className="aboutUs__order-content_title">{t("aboutUs__order-content_title")}</span>
+                        </div>
                     </div>
                 </div>
             </section>

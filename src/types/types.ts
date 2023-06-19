@@ -4,7 +4,7 @@ export type componentsLystType = {
     component: ReactElement, link: string
 }
 export type linksLystType = {
-    title: string, linkImg?: string, link: string
+    title: string, linkImg?: string, value: string
 }
 export type locationType = {
     hash: string
@@ -15,18 +15,25 @@ export type locationType = {
 }
 export type ProductsType = {
     id: number
-    name: string
-    description: string[],
-    price: number
+    price:number
+    name: {[key:string]:string}
+    rating:string
+    description: productValuesType
     image: string
-    
+
 }
+export type productValuesType = {
+    ua: string[]
+    en: string[]
+}
+
 export type ProductsBasketType = {
     id: number
-    name: string
-    description: string[]
-    price: number
-    image: string
+    counter: number
+    name: {[key:string]:string}
+    price:number
+    rating:string
     typeProduct?: string
-    counter?: number
+    description: productValuesType
+    image: string
 }

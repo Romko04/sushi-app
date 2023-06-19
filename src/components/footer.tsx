@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+    const {t} = useTranslation()
     return (
         <footer className="footer">
         <div className="container">
@@ -33,12 +36,10 @@ const Footer = () => {
             </div>
             <div className="footer__content-bottom">
                 <div className="disain-author">
-                    <span>Дизайн:</span>
-                    <span>Андрей Сухов</span>
+                    <span>{t('design')}</span>
                 </div>
                 <div className="development-author">
-                    <span>Разработка:</span>
-                    <span>Роман Курпель</span>
+                    <span>{t('dev')}</span>
                 </div>
             </div>
         </div>

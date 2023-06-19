@@ -15,8 +15,8 @@ const Header = () => {
     }
     const dropDowns: dropDownsType = {
         numbers: ['48 696 84 31 31', '48 636 44 31 31', '42 6096 84 32 33'],
-        cities: ['London', 'Krakow'],
-        languages: ['UA', 'RU', 'PL']
+        cities: ['kyiev', 'london'],
+        languages: ['UA', 'EN']
     }
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 

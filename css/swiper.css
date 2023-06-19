@@ -1,0 +1,61 @@
+@charset "UTF-8";
+.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background: #716b6b;
+  bottom: 10px;
+  position: relative;
+}
+@media (max-width: 450px) {
+  .swiper-pagination-bullet {
+    bottom: 7px;
+    height: 7px;
+    width: 7px;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background: #C83A2E;
+}
+
+.swiper__slide-text {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 761px;
+}
+
+.swiper__slide-content {
+  position: relative;
+}
+.swiper__slide-text--big {
+  /* Описание */
+  font-family: "TT Hoves";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 88px;
+  line-height: 95%;
+  /* or 84px */
+  letter-spacing: -0.06em;
+  width: 761px;
+  color: #000000;
+}
+.swiper__slide-text--small {
+  font-family: "TT Hoves";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 27px;
+  position: absolute;
+  bottom: 5px;
+  margin-left: 45px;
+  color: #000000;
+}
+.swiper__slide-text--small--white {
+  color: #FFFFFF;
+  width: 99px;
+}

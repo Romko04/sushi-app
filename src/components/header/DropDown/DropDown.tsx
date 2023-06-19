@@ -1,27 +1,55 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.css';
+import { useDispatch } from 'react-redux';
+import { setCity, setLanguage } from '../../../redux/slices/ProductsSlice';
+import { useTranslation } from 'react-i18next';
 
 interface PropsDropDown {
     type: 'numbers' | 'cities' | 'languages';
     list: string[];
 }
-
 const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
+    const { i18n, t } = useTranslation()
+    const dispatch = useDispatch()
     const [isActive, setActive] = useState<boolean>(false);
-    const menuRef = useRef<HTMLDivElement|null>(null)
-    const handleClickOutside = (e:MouseEvent) => {
+    const [activeIndex, setActiveIndex] = useState<number>(0)
+    const menuRef = useRef<HTMLDivElement | null>(null)
+    const handleClickOutside = (e: MouseEvent) => {
         if (!menuRef?.current?.contains(e.target as Node)) {
             setActive(false);
-          }
-        
-        
+        }
+    }
+    useEffect(()=>{
+        debugger
+        if (type === 'cities') {
+            dispatch(setCity(list[activeIndex]))
+        }
+    },[])
+    const handleClickLanguage = (type: string, item: string, event: React.MouseEvent<HTMLLIElement>, index: number) => {
+        switch (type) {
+            case "cities":
+                event.preventDefault()
+                setActiveIndex(index)
+                dispatch(setCity(item))
+                setActive(false)
+                break;
+            case "languages":
+                event.preventDefault()
+                setActiveIndex(index)
+                dispatch(setLanguage(item as "ua" || 'en'))
+                i18n.changeLanguage(item)
+                setActive(false)
+                break;
+            default:
+                break;
+        }
     }
     useEffect(() => {
-        window.addEventListener('click', handleClickOutside )
+        window.addEventListener('click', handleClickOutside)
         return () => {
-            window.removeEventListener('click',handleClickOutside)
+            window.removeEventListener('click', handleClickOutside)
         };
-      }, []);
+    }, []);
     const handleToggle = () => {
         setActive(!isActive);
     };
@@ -31,7 +59,7 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
          ${type === 'cities' && styles.dropdownCities} 
          ${isActive && styles.dropDownActive}
         `}
-        ref={menuRef}
+            ref={menuRef}
         >
             <button
                 onClick={handleToggle}
@@ -39,11 +67,11 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
                  ${styles.dropdownToggle}
                  ${type !== 'numbers' && styles.dropdownNoNumbers} 
                  ${type === 'cities' && styles.dropdownCityBtn}
-                 ${isActive && type === 'cities' &&styles.dropdownCityBtnActive}
+                 ${isActive && type === 'cities' && styles.dropdownCityBtnActive}
                 `}
             >
                 {
-                    type === 'cities' ? 'Выбирите ваш город' : list[0]
+                    type === 'cities' ? t('CitySelection') : list[activeIndex]
                 }
 
             </button>
@@ -53,8 +81,9 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
                 ${type === 'cities' && styles.dropdownCityMenu}
             `}>
                 {list.map((item, index) => (
-                    <li 
+                    <li
                         key={index}
+                        onClick={(event) => handleClickLanguage(type, item.toLowerCase(), event, index)}
                         className={`
                          ${styles.dropdownItem} 
                          ${type !== 'numbers' && styles.dropdownNoNumbers}
@@ -69,7 +98,7 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
                              ${type === 'cities' && styles.dropDownLinkCity}
                             `}
                             href="tel: 48 696 84 31 31">
-                            {item}
+                            {t(item)}
                         </a>
                     </li>
                 ))}
