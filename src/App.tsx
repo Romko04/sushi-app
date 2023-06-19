@@ -1,6 +1,6 @@
 import './scss/app.scss';
 import Header from './components/header/Header';
-import Footer from './components/Footer';
+import Footer from './components/footer';
 import Home from './pages/Home/Home';
 import Sidebar from './components/sidebar/sidebar';
 import { Route, Routes, useLocation } from 'react-router-dom';
