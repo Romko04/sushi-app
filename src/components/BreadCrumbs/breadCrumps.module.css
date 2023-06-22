@@ -4,6 +4,9 @@
 .list {
     display: flex;
     gap: 14px;
+    @media (max-width: 455px) {
+        flex-wrap: wrap;
+ }
 }
 .nav{
     display: flex;

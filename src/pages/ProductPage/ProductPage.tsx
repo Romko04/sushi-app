@@ -7,41 +7,66 @@ import { fetchProducts } from '../../redux/slices/ProductsSlice';
 import { ProductsType } from '../../types/types';
 import ProductCounter from '../../components/ProductCounter';
 import ProductPageLoader from '../../components/ProductPageLoader';
+
 const ProductPage: React.FC = () => {
-    const { products, typeProduct, language } = useSelector((state: RootState) => state.products)
-    const basketProducts = useSelector((state: RootState) => state.basket.products)
-    const { breakpoint, id } = useParams()
-    let findBasketProuduct: (ProductsType & { counter: number }) | undefined
-    let product: ProductsType | undefined
-    const dispatch: AppDispatch = useDispatch()
+    const { products, typeProduct, language } = useSelector((state: RootState) => state.products);
+    const basketProducts = useSelector((state: RootState) => state.basket.products);
+    const { breakpoint, id } = useParams();
+    let findBasketProuduct: (ProductsType & { counter: number }) | undefined;
+    let product: ProductsType | undefined;
+    const dispatch: AppDispatch = useDispatch();
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     useEffect(() => {
-        if (breakpoint && typeProduct !== breakpoint) dispatch(fetchProducts({ product: breakpoint, sort: '' }))
-    }, [products.length, typeProduct, dispatch,])
+        if (breakpoint && typeProduct !== breakpoint) {
+            dispatch(fetchProducts({ product: breakpoint, sort: '' }));
+        }
+        scrollToTop();
+    }, [breakpoint, typeProduct, dispatch, id]);
+
     if (id) {
-        product = products.find(item => item.id === +id)
-        findBasketProuduct = basketProducts.find(item => item.id === +id && product && product.name)
+        product = products.find((item) => item.id === +id);
+        findBasketProuduct = basketProducts.find(
+            (item) => item.id === +id && product && product.name
+        );
     }
+
     return (
-        <><section className="product">
-            <div className="container product__container">
-                {product
-                    ? <><div className="product__content">
-                        <img src={product && product.image} alt="productimg" />
-                        <div className="product__description">
-                            <h3 className="title product__description-title">{product && product.name[language]}</h3>
-                            <ul className="product__description-list">
-                                {product && product.description[language].map((item, index) => <li key={index} className="product__description-item">{item}</li>)}
-                            </ul>
-                            <ProductCounter product={product} findBasketProuduct={findBasketProuduct} />
+        <>
+            <section className="product">
+                <div className="container product__container">
+                    {product ? (
+                        <div className="product__content">
+                            <img src={product && product.image} alt="productimg" />
+                            <div className="product__description">
+                                <h3 className="title product__description-title">
+                                    {product && product.name[language]}
+                                </h3>
+                                <ul className="product__description-list">
+                                    {product &&
+                                        product.description[language].map((item, index) => (
+                                            <li
+                                                key={index}
+                                                className="product__description-item"
+                                            >
+                                                {item}
+                                            </li>
+                                        ))}
+                                </ul>
+                                <ProductCounter
+                                    product={product}
+                                    findBasketProuduct={findBasketProuduct}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    </>
-                    : <ProductPageLoader />
-                }
-
-            </div>
-        </section>
-
+                    ) : (
+                        <ProductPageLoader />
+                    )}
+                </div>
+            </section>
             <Recommendations />
         </>
     );

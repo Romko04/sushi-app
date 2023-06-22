@@ -22,11 +22,11 @@ const ProductCard:React.FC<ProductsType & {typeProduct:string}> = (product) => {
     }
     return (
         <div className=" product__card">
-            <Link to={''+product.id} className="swiper__slide-img product__card-img">
+            <Link to={`/menu/${product.typeProduct+'/'+product.id}`} className="swiper__slide-img product__card-img">
                 <img src={product.image} alt="product" />
             </Link>
             <div className="product__card-content">
-                <Link className="product__content-link" to={'' + product.id}>
+                <Link className="product__content-link" to={`/menu/${product.typeProduct+'/'+product.id}`}>
                 <h4 className="product__card-title">{product.name[language]}</h4>
                 </Link>
                 <div className="product__card-text">

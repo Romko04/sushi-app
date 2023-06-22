@@ -8,10 +8,14 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 15px;
+        @media (max-width: 811px) {
+            justify-content: center;
+          }
     }
 
     &__navigation-item {
         position: relative;
+        width: 300px;
     }
 
     &__navigation-img__title {

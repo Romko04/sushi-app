@@ -20,7 +20,6 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
         }
     }
     useEffect(()=>{
-        debugger
         if (type === 'cities') {
             dispatch(setCity(list[activeIndex]))
         }

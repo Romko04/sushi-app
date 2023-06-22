@@ -1,14 +1,19 @@
 import React from 'react';
-import Slide1 from './img/banner1.png'
-import Slide2 from './img/banner2.png'
+import Slide1UA from './img/bannerUA.png'
+import Slide1EN from './img/bannerEN.png'
+import Slide2UA from './img/Banner2UA.png'
+import Slide2EN from './img/Banner2EN.png'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './swiper.scss'
 import { Pagination } from 'swiper';
 import { t } from 'i18next';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../../../redux/store';
 
 export default () => {
+  const {language} = useSelector((state:RootState)=>state.products)
   return (
     <Swiper
       modules={[Pagination]}
@@ -19,10 +24,13 @@ export default () => {
       <SwiperSlide>
         <div className="swiper__slide-content">
           <div className="swiper__slide-img">
-            <img src={Slide1} alt="slideBanner" />
+            {
+            language === 'ua'
+            ? <img src={Slide1UA} alt="slideBanner" />
+            : <img src={Slide1EN} alt="slideBanner" />
+            }
+            
             <div className='swiper__slide-text'>
-              <span className='swiper__slide-text--big'>{t('bannerTextBig1')}</span>
-              <span className='swiper__slide-text--small'>{t('bannerTextSmall1')}</span>
             </div>
           </div>
         </div>
@@ -30,10 +38,12 @@ export default () => {
       <SwiperSlide>
         <div className="swiper__slide-content">
           <div className="swiper__slide-img">
-            <img src={Slide2} alt="slideBanner" />
+          {
+            language === 'ua'
+            ? <img src={Slide2UA} alt="slideBanner" />
+            : <img src={Slide2EN} alt="slideBanner" />
+            }
             <div className='swiper__slide-text'>
-              <span className='swiper__slide-text--big'>{t('bannerTextBig2')}</span>
-              <span className='swiper__slide-text--small swiper__slide-text--small--white'>{t('bannerTextSmall2')}</span>
             </div>
           </div>
         </div>
@@ -41,10 +51,12 @@ export default () => {
       <SwiperSlide>
         <div className="swiper__slide-content">
           <div className="swiper__slide-img">
-            <img src={Slide1} alt="slideBanner" />
+          {
+            language === 'ua'
+            ? <img src={Slide1UA} alt="slideBanner" />
+            : <img src={Slide1EN} alt="slideBanner" />
+            }
             <div className='swiper__slide-text'>
-              <span className='swiper__slide-text--big'>{t('bannerTextBig1')}</span>
-              <span className='swiper__slide-text--small'>{t('bannerTextSmall1')}</span>
             </div>
           </div>
         </div>
