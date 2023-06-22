@@ -10,6 +10,8 @@ import BreadCrumbs from './components/BreadCrumbs/BreadCrumbs';
 import { locationType } from './types/types';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ProductPage from './pages/ProductPage/ProductPage';
+import AboutUs from './pages/aboutUs/aboutUs';
+import ShippingPage from './pages/Shipping/Shipping';
 
 const  App =()=> {
   const location:locationType = useLocation()
@@ -27,6 +29,8 @@ const  App =()=> {
             <Route path='/basket' Component={Basket}  />
             <Route path="/menu/:breakpoint" element={<ProductsPage/>} />
             <Route path="/menu/:breakpoint/:id?" element={<ProductPage/>} />
+            <Route path="/about" element={<AboutUs/>} />
+            <Route path="/shipping" element={<ShippingPage/>} />
           </Routes>
         </div>
       </main>
