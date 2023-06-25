@@ -10,7 +10,7 @@ import BreadCrumbs from './components/BreadCrumbs/BreadCrumbs';
 import { locationType } from './types/types';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ProductPage from './pages/ProductPage/ProductPage';
-import AboutUs from './pages/aboutUs/aboutUs';
+import AboutUs from './pages/AboutUs/AboutUs';
 import ShippingPage from './pages/Shipping/Shipping';
 
 const  App =()=> {

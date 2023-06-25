@@ -7,7 +7,6 @@ const BasketSideBar = () => {
     const {t} = useTranslation()
     const {products} = useSelector((state:RootState)=>state.basket)
     const [totalPrice,setTotalCount] = useState<number>(0)
-    const language = 'uk'
     useEffect(()=>{
         const price = products.reduce((totalPrice,currentItem)=>{
             return totalPrice + (currentItem.counter * currentItem.price)
@@ -15,7 +14,7 @@ const BasketSideBar = () => {
         setTotalCount(price)
     },[products])
     return (
-        <aside className="sidebar">
+        <aside className="sidebar__basket">
         <div className="sidebar__container">
             <h3 className="sidebar__title">{t('sidebar__title')}</h3>
             <nav className="sidebar__check">

@@ -5,6 +5,9 @@
     }
     &__wrapper{
         display: flex;
+        @media (max-width: 1096px) {
+            flex-direction: column;
+     }
     }
     &__order-list{
         display: grid;
@@ -236,6 +239,7 @@
     }
 }
 .sidebar{
+    
     &__title{
         font-family: 'TT Hoves';
         font-style: normal;
@@ -252,6 +256,9 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
+        @media (max-width: 1096px) {
+            margin: 0 40px 100px;
+     }
     }
     &__check-item__price{
         font-family: 'TT Hoves';
@@ -280,6 +287,8 @@
         display: flex;
         justify-content: space-between;
         width: 315px;
-
+        @media (max-width: 1096px) {
+            width: auto;
+     }
     }
 }
