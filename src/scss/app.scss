@@ -1,4 +1,5 @@
 @import './variables';
+
 @font-face {
   font-family: "TT Hoves";
   src: url("../assets/fonts/TT Hoves Pro Trial Light.ttf") format("truetype");
@@ -20,14 +21,17 @@ body {
   font-size: 20px;
   color: #000;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-.content{
+
+.content {
   width: 100%;
 }
+
 .main {
   flex: 1;
   display: flex;
@@ -47,11 +51,13 @@ body {
   line-height: 95%;
   letter-spacing: -0.06em;
   color: #000000;
+
   @media (max-width: 1200px) {
     font-size: calc(40px + (88 - 20) * ((100vw - 320px) / (1200 - 320)));
   }
 }
-.price{
+
+.price {
   font-family: 'TT Hoves';
   font-style: normal;
   font-weight: 400;
@@ -60,6 +66,7 @@ body {
   color: #000000;
 
 }
+
 .subtitle {
   font-family: 'TT Hoves';
   font-style: normal;
@@ -73,6 +80,7 @@ body {
 .content-text {
   display: flex;
   align-items: flex-end;
+
   @media (max-width: 988px) {
     flex-direction: column;
     align-items: flex-start;
@@ -98,6 +106,7 @@ body {
   gap: 20px;
   color: #000000;
 }
+
 .button {
   padding: 24px 82px 24px 40px;
   background-color: $btn-color;
@@ -119,7 +128,13 @@ body {
   }
 }
 
-  @import './libs/_normalize';
-  @import './components/_all';
-  @import './pages/_all';
-  
+.no-scroll {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+@import './libs/_normalize';
+@import './components/_all';
+@import './pages/_all';

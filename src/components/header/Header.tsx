@@ -7,13 +7,9 @@ import NavigationMobile from './Navigation/NavigationMobile/NavigationMobile';
 import Nav from './Navigation/Nav';
 import NavRight from './Navigation/NavRight';
 import { Link } from 'react-router-dom';
+import { DropdownOptionsType } from '../../types/types';
 const Header = () => {
-    type dropDownsType = {
-        numbers: string[],
-        cities: string[],
-        languages: string[],
-    }
-    const dropDowns: dropDownsType = {
+    const dropDowns: DropdownOptionsType = {
         numbers: ['48 696 84 31 31', '48 636 44 31 31', '42 6096 84 32 33'],
         cities: ['kyiev', 'london'],
         languages: ['UA', 'EN']
@@ -22,8 +18,6 @@ const Header = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            console.log(window.innerWidth);
-            
             setWindowWidth(window.innerWidth);
         };
         window.addEventListener('resize', handleResize);

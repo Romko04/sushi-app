@@ -31,6 +31,34 @@ export const fetchProducts = createAsyncThunk(
     const response = await getProducts(product,sort)
     return {products: response, typeProduct:product}
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 )
 export const productsSlice = createSlice({
   name: "products",

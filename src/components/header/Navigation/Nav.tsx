@@ -7,9 +7,8 @@ const Nav:React.FC = () => {
     const links:linksLystType[] = [
         {title: t('home'), value:"/"},
         {title: t('menu'), value:"menu"},
-        {title: t('aboutUs'), value:"about"},
+        {title: t('about'), value:"about"},
         {title: t('shipping'), value:"shipping"},
-        {title: t('Allergens'), value:"shipping"},
         ]
     return (
         <nav className="nav">

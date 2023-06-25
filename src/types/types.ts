@@ -1,7 +1,7 @@
 import { ReactElement } from "react"
 
 export type componentsLystType = {
-    component: ReactElement, link: string
+    component?: ReactElement, link: string, value?: string
 }
 export type linksLystType = {
     title: string, linkImg?: string, value: string
@@ -15,9 +15,9 @@ export type locationType = {
 }
 export type ProductsType = {
     id: number
-    price:number
-    name: {[key:string]:string}
-    rating:string
+    price: number
+    name: { [key: string]: string }
+    rating: string
     description: productValuesType
     image: string
 
@@ -30,10 +30,15 @@ export type productValuesType = {
 export type ProductsBasketType = {
     id: number
     counter: number
-    name: {[key:string]:string}
-    price:number
-    rating:string
+    name: { [key: string]: string }
+    price: number
+    rating: string
     typeProduct?: string
     description: productValuesType
     image: string
+}
+export type DropdownOptionsType = {
+    numbers: string[],
+    cities: string[],
+    languages: string[],
 }

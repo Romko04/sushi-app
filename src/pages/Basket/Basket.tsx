@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import BasketProductCard from './sections/BasketProductCard';
 import { useTranslation } from 'react-i18next';
-
 const Basket: React.FC = () => {
     const {t} = useTranslation()
     const {products,totalCount} = useSelector((state:RootState)=>state.basket)
