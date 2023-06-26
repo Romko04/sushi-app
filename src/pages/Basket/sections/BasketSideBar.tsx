@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux"
 import { RootState } from "../../../redux/store"
-import { useEffect, useState } from "react"
+import { FormEvent, useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
+import { valuesDataForm } from "../../../types/types"
 
 const BasketSideBar = () => {
     const {t} = useTranslation()
@@ -33,7 +34,7 @@ const BasketSideBar = () => {
                 <span className="sidebar__check-result-text">{t("sidebar__check-result-text1")}</span>
                 <span className="sidebar__check-result-text price">{Number(totalPrice + 25).toFixed(2)} ₴</span>
             </div>
-            <button className="button sidebar__check-btn">{t("sidebar__check-btn")}</button>
+            <button type="submit" className="button sidebar__check-btn">{t("sidebar__check-btn")}</button>
         </div>
     </aside>
     )

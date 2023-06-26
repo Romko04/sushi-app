@@ -1,7 +1,6 @@
 import React from "react"
 import Sety from './img/sety.jpg'
 import Hosonaki from './img/hosonaki.jpg'
-import Nigiri from './img/nigiri.jpg'
 import Urumaki from './img/uramaki.webp'
 import Sousy from './img/sousy.jpg'
 import Drinks from './img/drinks.jpg'

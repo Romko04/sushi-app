@@ -6,6 +6,19 @@ export type componentsLystType = {
 export type linksLystType = {
     title: string, linkImg?: string, value: string
 }
+
+export type valuesShipping = {
+    address: string
+    entrance: string
+    apartment: string
+    floor: string
+}
+export type valuesData = {
+    name: string
+    number: string
+    coment: string
+}
+export type valuesDataForm = valuesShipping & valuesData
 export type locationType = {
     hash: string
     key: string
