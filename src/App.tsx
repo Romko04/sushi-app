@@ -26,9 +26,9 @@ const App = () => {
         <div className="content">
           {links.length > 0 && <BreadCrumbs />}
           <Routes>
-            <Route path='/' Component={Home} />
-            <Route path='/menu' Component={Menu} />
-            <Route path='/basket' Component={Basket} />
+            <Route path='/' element={<Home/>} />
+            <Route path='/menu' element={<Menu />} />
+            <Route path='/basket' element={<Basket />} />
             <Route path="/menu/:breakpoint" element={<ProductsPage />} />
             <Route path="/menu/:breakpoint/:id?" element={<ProductPage />} />
             <Route path="/about" element={<AboutUs />} />
