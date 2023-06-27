@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Romko04/sushi-app/static/css/main.c0b33fe7.css",
-    "main.js": "/Romko04/sushi-app/static/js/main.e0e6085a.js",
+    "main.js": "/Romko04/sushi-app/static/js/main.f46144cf.js",
     "static/media/img1.svg": "/Romko04/sushi-app/static/media/img1.a5544de414f658e9c1b206c7ee8dd4cb.svg",
     "static/media/Banner2EN.png": "/Romko04/sushi-app/static/media/Banner2EN.917027edf39ebff89b53.png",
     "static/media/Banner2UA.png": "/Romko04/sushi-app/static/media/Banner2UA.3714614f6f151c4e0782.png",
@@ -36,10 +36,10 @@
     "static/media/arrow45.svg": "/Romko04/sushi-app/static/media/arrow45.3ce080d6e3b64e3ec0c7.svg",
     "static/media/minus.svg": "/Romko04/sushi-app/static/media/minus.568247a3cba59acb8a2b713242f0f9f9.svg",
     "main.c0b33fe7.css.map": "/Romko04/sushi-app/static/css/main.c0b33fe7.css.map",
-    "main.e0e6085a.js.map": "/Romko04/sushi-app/static/js/main.e0e6085a.js.map"
+    "main.f46144cf.js.map": "/Romko04/sushi-app/static/js/main.f46144cf.js.map"
   },
   "entrypoints": [
     "static/css/main.c0b33fe7.css",
-    "static/js/main.e0e6085a.js"
+    "static/js/main.f46144cf.js"
   ]
 }
