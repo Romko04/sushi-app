@@ -2,15 +2,14 @@ import React, { ReactNode, useState } from 'react';
 import styles from './MobileModal.module.css';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCity, setLanguage } from '../../redux/slices/ProductsSlice';
-import { RootState } from '../../redux/store';
+import { setCity, setLanguage } from '../../../redux/slices/ProductsSlice';
+import { RootState } from '../../../redux/store';
 interface MobileModalProps {
     children: string[]
     type: string
     closeModal(): void
 }
 const MobileModal: React.FC<MobileModalProps> = ({ type, children, closeModal }) => {
-    const {language} = useSelector((state:RootState)=>state.products)
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch();
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, value: string,type:string,) => {

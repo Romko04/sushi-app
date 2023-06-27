@@ -16,6 +16,7 @@ const ProductsPage: React.FC = () => {
     const location = useLocation()
     const keys = Object.keys(sortValues)
     useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         const searchParams = new URLSearchParams(location.search);
         const sortParam = searchParams.get('sort');
         if (sortParam){

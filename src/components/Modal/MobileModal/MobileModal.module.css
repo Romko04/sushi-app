@@ -61,3 +61,6 @@
     font-size: 60px;
     cursor: pointer;
 }
+.error{
+    color: #F03C1F;
+}

@@ -1,0 +1,114 @@
+/* authModal.module.css */
+
+.modal {
+    position: fixed;
+    width: 497px;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 48px 40px 65px 40px;
+    border-radius: 22px;
+    background: #FFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    @media (max-width: 542px) {
+        width: 300px;
+      }
+}
+
+.formLabel {
+    color: #797979;
+    font-size: 16px;
+    font-family: TT Hoves;
+    margin-bottom: 10px;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 15px 15px 30px;
+    border-radius: 9.963px;
+    border: 0.996px solid #D1D1D1;
+}
+.formGroup input:focus {
+    border: 0.996px solid #F03C1F;
+}
+.btnChageWrapper{
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    justify-content: center;
+}
+button[type="submit"], .formRegisterWithGoogle {
+    /* Ваші стилі */
+    margin-top: 60px;
+    border-radius: 1873px;
+    background: #2A2A2F;
+    color: #FFF;
+    font-size: 18px;
+    font-family: TT Hoves;
+    font-weight: 500;
+    line-height: 130%;
+    width: 100%;
+    padding: 17px 0;
+
+    /* Додавання переходу */
+    transition: background-color .5s;
+}
+
+.formRegisterWithGoogle{
+    /* Ваші стилі */
+    margin-top: 15px;
+}
+
+button[type="submit"]:hover{
+    background: linear-gradient(to right, #2A2A2F 0%, #2A2A2F 50%, #F03C1F 50%, #F03C1F 100%);
+    background-color: #2A2A2F;
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    transition: background-position .5s;
+}
+
+.formWrapper{
+    position: relative;
+}
+.closeBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.closeBtn:hover *{
+    fill: #F03C1F;
+}
+.formRegisterWithGoogleText{
+    display: inline-block;
+    color: #C3C3C3;
+    position: relative;
+    padding-left: 30px;
+}
+.formRegisterWithGoogleText::before{
+    content: url('./img/googleIcon.svg');
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.changeForm{
+    color: #797979;
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+.error{
+    color: #F03C1F;
+}

@@ -10,7 +10,9 @@ export interface initialStateType {
   activeSortIndex: number
   typeProduct:string
   language: "en"| "ua"
+  typeModal:'registration' | 'login'
   city: string
+  isOpenModal:boolean
 }
 const initialState: initialStateType = {
   products: [],
@@ -21,6 +23,8 @@ const initialState: initialStateType = {
   },
   activeSortIndex: 0,
   typeProduct: '',
+  typeModal: 'login',
+  isOpenModal: false,
   language: 'ua',
   city: ''
   
@@ -31,34 +35,6 @@ export const fetchProducts = createAsyncThunk(
     const response = await getProducts(product,sort)
     return {products: response, typeProduct:product}
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 )
 export const productsSlice = createSlice({
   name: "products",
@@ -75,6 +51,12 @@ export const productsSlice = createSlice({
     },
     setCity: (state, action: PayloadAction<string>) => {
       state.city = action.payload
+    },
+    setTypeModal: (state, action: PayloadAction<'registration' | 'login'>) => {
+      state.typeModal = action.payload
+    },
+    setisOpenModal: (state) => {
+      state.isOpenModal = !state.isOpenModal
     },
   },
   extraReducers: (builder) => {
@@ -94,6 +76,6 @@ export const productsSlice = createSlice({
   }
 })
 
-export const { setIndexSort,deleteIndexSort,setLanguage,setCity } = productsSlice.actions
+export const { setIndexSort,deleteIndexSort,setLanguage,setCity,setTypeModal,setisOpenModal } = productsSlice.actions
 
 export default productsSlice.reducer

@@ -1,10 +1,6 @@
 import React from "react"
 import Sety from './img/sety.jpg'
-import Hosonaki from './img/hosonaki.jpg'
-import Urumaki from './img/uramaki.webp'
-import Sousy from './img/sousy.jpg'
-import Drinks from './img/drinks.jpg'
-import Salats from './img/salats.png'
+import Philadelphia from './img/philadelphia.jpg'
 import { linksLystType } from "../../types/types"
 import { Link  } from "react-router-dom"
 import { useTranslation } from "react-i18next"
@@ -12,11 +8,7 @@ const Menu:React.FC = () => {
     const {t} = useTranslation()
     const menuList:linksLystType[] = [
         {title:'Сеты ', linkImg: Sety, value: 'sets'},
-        {title:'Філадельфія', linkImg: Hosonaki, value: 'philadelphia'},
-        {title:'Урумаки', linkImg: Urumaki, value: 'futumaki'},
-        {title:'Салати', linkImg: Salats, value: 'salats'},
-        {title:'Напитки', linkImg: Drinks, value: 'drinks'},
-        {title:'Соусы', linkImg: Sousy, value: 'sauce'},
+        {title:'Філадельфія', linkImg: Philadelphia, value: 'philadelphia'},
     ]
     return (
         <section className="menu">

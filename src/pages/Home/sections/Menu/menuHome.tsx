@@ -9,19 +9,15 @@ import Menu from './img/inMenu.svg'
 
 
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 type menuItem = {
-    link:string
+    img:string
     value: string
 }
   
   const menuList: menuItem[] = [
-    { link: Sets, value: 'sets' },
-    { link: Fhiladelphia, value: 'philadelphia' },
-    { link: Futumaki, value: 'futumaki' },
-    { link: Salats, value: 'salats' },
-    { link: Sauce, value: 'sauce' },
-    { link: Drinks, value: 'drinks' },
-    { link: Menu, value: 'menu' }
+    { img: Sets, value: 'sets' },
+    { img: Fhiladelphia, value: 'philadelphia' },
   ];
 const MenuHome = () => {
     const {t} = useTranslation()
@@ -41,10 +37,10 @@ const MenuHome = () => {
                                 
                                 return (
                                     <li key={index} className="menu__navigation-item">
-                                        <a href="#" className="menu__navigaton-link">
-                                            <img src={item.link} alt="" className="menu__navigaton-img" />
+                                        <Link to={`/menu/${item.value}`} className="menu__navigaton-link">
+                                            <img src={item.img} alt="" className="menu__navigaton-img" />
                                             <span className={`menu__navigation-img__title ${item.value === 'menu'&& 'menu__navigation-img__title--menu'} `}>{t(item.value)}</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                 )
                             })}
