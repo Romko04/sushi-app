@@ -34,7 +34,6 @@ const MenuHome = () => {
                     <nav className="menu__navigation">
                         <ul className="menu__navigation-list">
                             {menuList.map((item, index: number) => {
-                                
                                 return (
                                     <li key={index} className="menu__navigation-item">
                                         <Link to={`/menu/${item.value}`} className="menu__navigaton-link">

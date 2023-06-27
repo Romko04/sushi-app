@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import { store } from './redux/store';
 import './i18n'
@@ -11,11 +11,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter> {/* Так як GitHub не підтримує BrowserRouter */}
       <Suspense fallback={<div>Loading</div>}>
         <App />
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
 
 );
