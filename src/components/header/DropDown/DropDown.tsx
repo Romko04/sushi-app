@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.css';
-import { useDispatch } from 'react-redux';
-import { setCity, setLanguage } from '../../../redux/slices/ProductsSlice';
-import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCity } from '../../../redux/slices/ProductsSlice';
+import { RootState } from '../../../redux/store';
+import { setLanguage } from '../../../redux/slices/LanguageSlice';
 
 interface PropsDropDown {
     type: 'numbers' | 'cities' | 'languages';
     list: string[];
 }
 const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
-    const { i18n, t } = useTranslation()
+    const {languages,language} = useSelector((state:RootState)=>state.languages)
     const dispatch = useDispatch()
     const [isActive, setActive] = useState<boolean>(false);
     const [activeIndex, setActiveIndex] = useState<number>(0)
@@ -36,7 +37,6 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
                 event.preventDefault()
                 setActiveIndex(index)
                 dispatch(setLanguage(item as "ua" || 'en'))
-                i18n.changeLanguage(item)
                 setActive(false)
                 break;
             default:
@@ -70,7 +70,7 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
                 `}
             >
                 {
-                    type === 'cities' ? t('CitySelection') : list[activeIndex]
+                    type === 'cities' ? languages[language]['CitySelection'] : list[activeIndex]
                 }
 
             </button>
@@ -97,7 +97,7 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
                              ${type === 'cities' && styles.dropDownLinkCity}
                             `}
                             href="tel: 48 696 84 31 31">
-                            {t(item)}
+                            {languages[language][item] || item}
                         </a>
                     </li>
                 ))}

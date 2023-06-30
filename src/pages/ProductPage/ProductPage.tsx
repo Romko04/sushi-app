@@ -9,7 +9,9 @@ import ProductCounter from '../../components/ProductCounter';
 import ProductPageLoader from '../../components/ProductPageLoader';
 
 const ProductPage: React.FC = () => {
-    const { products, typeProduct, language } = useSelector((state: RootState) => state.products);
+    const { products, typeProduct } = useSelector((state: RootState) => state.products);
+    const {language} = useSelector((state: RootState) => state.languages);
+
     const basketProducts = useSelector((state: RootState) => state.basket.products);
     const { breakpoint, id } = useParams();
     let findBasketProuduct: (ProductsType & { counter: number }) | undefined;
@@ -47,7 +49,7 @@ const ProductPage: React.FC = () => {
                                 </h3>
                                 <ul className="product__description-list">
                                     {product &&
-                                        product.description[language].map((item, index) => (
+                                        product.description[language].map((item, index:number) => (
                                             <li
                                                 key={index}
                                                 className="product__description-item"

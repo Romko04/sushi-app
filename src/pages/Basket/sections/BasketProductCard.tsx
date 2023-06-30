@@ -7,7 +7,7 @@ import { ReactComponent as Minus } from '../img/minus.svg'
 import { ReactComponent as Plus } from '../img/plus.svg'
 import { Link } from "react-router-dom"
 const BasketProductCard:React.FC<{item:ProductsBasketType & {counter:number}}> = ({item}) => {
-    const {language} = useSelector((state:RootState) => state.products)
+    const {language} = useSelector((state:RootState) => state.languages)
     const dispatch:AppDispatch = useDispatch()
     const incrementhandleClick=(item:ProductsType & {counter:number}) => {
         dispatch(incrementProduct({...item}))

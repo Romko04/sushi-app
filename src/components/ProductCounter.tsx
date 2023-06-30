@@ -1,16 +1,15 @@
-import { useDispatch  } from 'react-redux';
-import { AppDispatch } from '../redux/store';
+import { useDispatch, useSelector  } from 'react-redux';
+import { AppDispatch, RootState } from '../redux/store';
 import { ReactComponent as Minus } from '../pages/ProductPage/img/minus.svg';
 import { ReactComponent as Plus } from '../pages/ProductPage/img/plus.svg';
 import { ProductsBasketType, ProductsType } from '../types/types';
 import { deincrementProduct, incrementProduct, setProduct } from '../redux/slices/BasketSlice';
-import { useTranslation } from 'react-i18next';
 interface ProductCounter {
     product: ProductsType 
     findBasketProuduct: ProductsBasketType | undefined
 }
 const ProductCounter:React.FC<ProductCounter> = ({product, findBasketProuduct}) => {
-    const {t} = useTranslation()
+    const {languages,language} = useSelector((state:RootState)=>state.languages)
     const dispatch:AppDispatch = useDispatch()
     const setProductHandleClick=() => {
             dispatch(setProduct({...product,counter:1}))
@@ -38,7 +37,7 @@ const ProductCounter:React.FC<ProductCounter> = ({product, findBasketProuduct}) 
             </div>
             <div className="product__order">
                 <button onClick={setProductHandleClick} className="button product__order-btn">
-                    {t('addInBasketBtn')}
+                    {languages[language]['addInBasketBtn']}
                 </button>
                 <span className="product__order-price">{product && product.price.toFixed(2)}₴</span>
             </div>

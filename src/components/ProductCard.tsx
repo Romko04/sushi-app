@@ -3,10 +3,8 @@ import { AppDispatch, RootState } from "../redux/store";
 import { ProductsType } from "../types/types";
 import { setProduct } from "../redux/slices/BasketSlice";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 const ProductCard:React.FC<ProductsType & {typeProduct:string}> = (product) => {   
-    const {t} = useTranslation()
-    const {language} = useSelector((state:RootState)=>state.products)
+    const {language,languages} = useSelector((state:RootState)=>state.languages)
     const dispatch:AppDispatch = useDispatch()
     const handleClick=() => {  
         dispatch(setProduct({
@@ -33,7 +31,7 @@ const ProductCard:React.FC<ProductsType & {typeProduct:string}> = (product) => {
                     {product.description[language].map((item,index)=><span key={index}>{item}</span>)}
                 </div>
                 <div className="product__card-content-bottom">
-                    <button onClick={handleClick} className="button product__card-btn">{t('inBasket')}</button>
+                    <button onClick={handleClick} className="button product__card-btn">{languages[language]['inBasket']}</button>
                     <span className="product__card-price">{product.price}₴</span>
                 </div>
             </div>

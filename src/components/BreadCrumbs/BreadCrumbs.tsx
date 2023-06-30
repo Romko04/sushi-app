@@ -8,8 +8,7 @@ import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import { useTranslation } from "react-i18next"
 const BreadCrumbs = () => {
-    const { t } = useTranslation();
-    const {language} = useSelector((state:RootState)=> state.products)
+    const {languages,language} = useSelector((state:RootState)=>state.languages)
     const location: locationType = useLocation()
     const links = location.pathname.split('/').filter(i => i !== '')
     const { products } = useSelector((state: RootState) => state.products)
@@ -25,7 +24,7 @@ const BreadCrumbs = () => {
                     </button>
                     <ul className={styles.list}>
                         <li className={styles.item}>
-                            <Link className={styles.link} to={'/'}>{t('home')}</Link>
+                            <Link className={styles.link} to={'/'}>{languages[language]['home']}</Link>
                         </li>
                         {
                             links.map((item, index) => {
@@ -39,9 +38,9 @@ const BreadCrumbs = () => {
                                     ) : (
                                         <li key={index} className={styles.item}>
                                             {links.length - 1 === index ? (
-                                                <span className={styles.link}>{t(item)}</span>
+                                                <span className={styles.link}>{languages[language][item]}</span>
                                             ) : (
-                                                <Link className={styles.link} to={item === 'menu'?'menu/':`menu/${item}`}>{t(item)}</Link>
+                                                <Link className={styles.link} to={item === 'menu'?'menu/':`menu/${item}`}>{languages[language][item]}</Link>
                                             )}
                                         </li>
                                     )

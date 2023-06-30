@@ -9,7 +9,6 @@ export interface initialStateType {
   sortValues: sortListType
   activeSortIndex: number
   typeProduct:string
-  language: "en"| "ua"
   typeModal:'registration' | 'login'
   city: string
   isOpenModal:boolean
@@ -25,7 +24,6 @@ const initialState: initialStateType = {
   typeProduct: '',
   typeModal: 'login',
   isOpenModal: false,
-  language: 'ua',
   city: ''
   
 }
@@ -45,9 +43,6 @@ export const productsSlice = createSlice({
     },
     deleteIndexSort: (state) => {
       state.activeSortIndex = 0
-    },
-    setLanguage: (state, action: PayloadAction<"ua"|"en">) => {
-      state.language = action.payload
     },
     setCity: (state, action: PayloadAction<string>) => {
       state.city = action.payload
@@ -76,6 +71,6 @@ export const productsSlice = createSlice({
   }
 })
 
-export const { setIndexSort,deleteIndexSort,setLanguage,setCity,setTypeModal,setisOpenModal } = productsSlice.actions
+export const { setIndexSort,deleteIndexSort,setCity,setTypeModal,setisOpenModal } = productsSlice.actions
 
 export default productsSlice.reducer

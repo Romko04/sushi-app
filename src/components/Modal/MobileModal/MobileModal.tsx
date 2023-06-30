@@ -1,16 +1,16 @@
 import React, { ReactNode, useState } from 'react';
 import styles from './MobileModal.module.css';
-import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCity, setLanguage } from '../../../redux/slices/ProductsSlice';
+import { setCity } from '../../../redux/slices/ProductsSlice';
 import { RootState } from '../../../redux/store';
+import { setLanguage } from '../../../redux/slices/LanguageSlice';
 interface MobileModalProps {
     children: string[]
     type: string
     closeModal(): void
 }
 const MobileModal: React.FC<MobileModalProps> = ({ type, children, closeModal }) => {
-    const { t, i18n } = useTranslation();
+  const {languages,language} = useSelector((state:RootState)=>state.languages)
     const dispatch = useDispatch();
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, value: string,type:string,) => {
       e.preventDefault();
@@ -18,7 +18,6 @@ const MobileModal: React.FC<MobileModalProps> = ({ type, children, closeModal })
         dispatch(setCity(value))
       } else {
         dispatch(setLanguage(value.toLocaleLowerCase() as "ua"|"en"))
-        i18n.changeLanguage(value.toLowerCase())
       }
 
       closeModal();
@@ -34,7 +33,7 @@ const MobileModal: React.FC<MobileModalProps> = ({ type, children, closeModal })
       <>
         <div className={styles.modalOverlay} onClick={handleOverlayClick}>
           <div className={styles.modalContent}>
-            <h5 className={styles.title}>{t(type)}</h5>
+            <h5 className={styles.title}>{languages[language][type]}</h5>
             <button className={styles.modalClose} onClick={closeModal}>
               &times;
             </button>
@@ -42,7 +41,7 @@ const MobileModal: React.FC<MobileModalProps> = ({ type, children, closeModal })
               <li className={styles.item} key={index}>
                 {type === "numbers" ? (
                   <a className={styles.link} href={`tel:${item}`}>
-                    {t(item)}
+                    {languages[language][item] || item}
                   </a>
                 ) : (
                   <a
@@ -50,7 +49,7 @@ const MobileModal: React.FC<MobileModalProps> = ({ type, children, closeModal })
                     className={styles.link}
                     href="#"
                   >
-                    {t(item)}
+                    {languages[language][item] || item}
                   </a>
                 )}
               </li>
@@ -62,4 +61,6 @@ const MobileModal: React.FC<MobileModalProps> = ({ type, children, closeModal })
   };
   
   export default MobileModal;
+
+
   

@@ -5,13 +5,12 @@ import { deleteIndexSort, fetchProducts, setIndexSort } from "../../redux/slices
 import { AppDispatch, RootState } from "../../redux/store";
 import Sort from "../../components/Sort/Sort";
 import { useLocation, useParams } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import ProductLoader from "../../components/ProductLoader";
 
 const ProductsPage: React.FC = () => {
     const {products,sortValues,activeSortIndex,typeProduct} = useSelector((state:RootState)=>state.products)
     const dispatch: AppDispatch = useDispatch()
-    const { t } = useTranslation()
+    const {languages,language} = useSelector((state:RootState)=>state.languages)
     const { breakpoint } = useParams()
     const location = useLocation()
     const keys = Object.keys(sortValues)
@@ -33,7 +32,7 @@ const ProductsPage: React.FC = () => {
             <div className="container">
                 <div className="product__content-text content-text">
                     <h2 className="title product__title">
-                        {t(breakpoint + '')}
+                        {languages[language][breakpoint+'']}
                     </h2>
                     <Sort breakpoint={typeProduct} sortValues={sortValues} activeSortIndex={activeSortIndex} />
                 </div>

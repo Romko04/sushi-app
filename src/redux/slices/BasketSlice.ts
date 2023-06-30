@@ -17,7 +17,7 @@ const searchProduct  = (state:initialStateType, product:ProductsType & {counter:
 const findTotalCount = (state:initialStateType) => {
   return state.totalCount = state.products.reduce((total,currentItem) => total + currentItem.counter,0)
 }
-export const productsSlice = createSlice({
+export const basketSlice = createSlice({
   name: "basket",
   initialState,
   reducers: {
@@ -65,6 +65,6 @@ export const productsSlice = createSlice({
 
 })
 
-export const { setProduct,incrementProduct,deincrementProduct,deleteProduct} = productsSlice.actions
+export const { setProduct,incrementProduct,deincrementProduct,deleteProduct} = basketSlice.actions
 
-export default productsSlice.reducer
+export default basketSlice.reducer

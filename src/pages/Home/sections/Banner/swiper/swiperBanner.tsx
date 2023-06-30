@@ -8,12 +8,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './swiper.scss'
 import { Pagination } from 'swiper';
-import { t } from 'i18next';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
 
 export default () => {
-  const {language} = useSelector((state:RootState)=>state.products)
+  const {language} = useSelector((state:RootState)=>state.languages)
   return (
     <Swiper
       modules={[Pagination]}

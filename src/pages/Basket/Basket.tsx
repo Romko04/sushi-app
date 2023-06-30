@@ -1,17 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { useTranslation } from 'react-i18next';
 import { valuesDataForm } from '../../types/types';
 import { Formik } from 'formik';
-
 import BasketData from './sections/BasketData';
 import BasketSideBar from './sections/BasketSideBar';
 import BasketProductCard from './sections/BasketProductCard';
 import Shipping from './sections/Shipping';
 
 const Basket: React.FC = () => {
-    const { t } = useTranslation();
+    const {languages,language} = useSelector((state:RootState)=>state.languages)
     const { products, totalCount } = useSelector((state: RootState) => state.basket);
 
     const initialValuesData: valuesDataForm = {
@@ -26,20 +24,20 @@ const Basket: React.FC = () => {
     const handleSubmit = (values: valuesDataForm) => {
         let isValid = true;
         if (products.length < 1) {
-            alert(t("noProductSelected"))
+            alert(languages[language]["noProductSelected"])
             return
         }
         for (const key in values) {
             const value: string = values[key as keyof typeof values] as string;
             if (!value) {
                 isValid = false;
-                alert(t("fillAllFields"));
+                alert(languages[language]["fillAllFields"]);
                 break;
             }
         }
 
         if (isValid) {
-            alert(t("orderSubmitted"));
+            alert(languages[language]["orderSubmitted"]);
         }
     };
 
@@ -56,15 +54,15 @@ const Basket: React.FC = () => {
                             <section className="basket">
                                 <div className="basket__login">
                                     <div className="basket__login-content">
-                                        <h5 className="basket__login-title">{t('basket__login-title')}</h5>
-                                        <span className="basket__login-text">{t('basket__login-text')}</span>
+                                        <h5 className="basket__login-title">{languages[language]['basket__login-title']}</h5>
+                                        <span className="basket__login-text">{languages[language]['basket__login-text']}</span>
                                     </div>
-                                    <button className="button basket__login-btn">{t('basket__login-btn')}</button>
+                                    <button className="button basket__login-btn">{languages[language]['basket__login-btn']}</button>
                                 </div>
                                 <div className="basket__order">
                                     <div className="basket__order-top">
-                                        <h4 className="basket__order-top-title">{t('basket__order-top-title')}</h4>
-                                        <span className="basket__order-top-count">{t('basket__order-top-count1')} {totalCount} {t('basket__order-top-count2')}</span>
+                                        <h4 className="basket__order-top-title">{languages[language]['basket__order-top-title']}</h4>
+                                        <span className="basket__order-top-count">{languages[language]['basket__order-top-count1']} {totalCount} {languages[language]['basket__order-top-count2']}</span>
                                     </div>
                                     <ul className="basket__order-list">
                                         {products.map((item, index) => <BasketProductCard key={index} item={{ ...item }} />)}

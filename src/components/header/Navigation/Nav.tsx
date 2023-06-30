@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { linksLystType } from '../../../types/types';
-import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
 const Nav:React.FC = () => {
-    const {t} = useTranslation()
+    const {languages,language} = useSelector((state:RootState)=>state.languages)
     const links:linksLystType[] = [
-        {title: t('home'), value:"/"},
-        {title: t('menu'), value:"menu"},
-        {title: t('aboutUs'), value:"about"},
-        {title: t('shipping'), value:"shipping"},
+        {title: 'home', value:"/"},
+        {title: 'menu', value:"menu"},
+        {title: 'aboutUs', value:"about"},
+        {title: 'shipping', value:"shipping"},
         ]
     return (
         <nav className="nav">
@@ -18,7 +19,7 @@ const Nav:React.FC = () => {
                     {links.map((i, index) => {
                         return (
                             <li key={index} className="nav__menu-item">
-                                <Link className='nav__link' to={i.value}>{i.title}</Link>
+                                <Link className='nav__link' to={i.value}>{languages[language][i.title]}</Link>
                             </li>
                         )
                     })}

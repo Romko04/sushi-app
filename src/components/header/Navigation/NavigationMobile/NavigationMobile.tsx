@@ -12,7 +12,7 @@ import MobileModal from "../../../Modal/MobileModal/MobileModal"
 import { setisOpenModal } from "../../../../redux/slices/ProductsSlice"
 const NavigationMobile = () => {
     const dispatch: AppDispatch = useDispatch()
-    const {language} = useSelector((state:RootState)=>state.products)
+    const {language} = useSelector((state:RootState)=>state.languages)
     const modals: DropdownOptionsType = {
         numbers: ['48 696 84 31 31', '48 636 44 31 31', '42 696 84 32 33'],
         cities: ['kyiev', 'london'],
