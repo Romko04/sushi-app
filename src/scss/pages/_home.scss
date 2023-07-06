@@ -65,7 +65,11 @@
 
   &__content-btn:hover {
     background-color: #686161;
-
+    background-size: 0;
+    background-position: -100% 0;
+    @media only screen and (max-width: 767px) {
+      background: #686161; /* Замініть $btn-color на вашу змінну з бажаним фоновим кольором */
+    }
   }
 
   &__content-link {
@@ -205,6 +209,7 @@
 
   &__title {
     margin-right: 96px;
+    width: 50%;
   }
   &__order-content {
     display: flex;

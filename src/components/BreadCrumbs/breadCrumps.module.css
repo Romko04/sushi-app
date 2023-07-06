@@ -4,7 +4,7 @@
 .list {
     display: flex;
     gap: 14px;
-    @media (max-width: 455px) {
+    @media (max-width: 590px) {
         flex-wrap: wrap;
  }
 }

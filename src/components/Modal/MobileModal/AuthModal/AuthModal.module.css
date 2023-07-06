@@ -13,7 +13,7 @@
     background: #FFF;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     @media (max-width: 542px) {
-        width: 300px;
+        width:80%;
       }
 }
 
@@ -68,15 +68,6 @@ button[type="submit"], .formRegisterWithGoogle {
     /* Ваші стилі */
     margin-top: 15px;
 }
-
-button[type="submit"]:hover{
-    background: linear-gradient(to right, #2A2A2F 0%, #2A2A2F 50%, #F03C1F 50%, #F03C1F 100%);
-    background-color: #2A2A2F;
-    background-size: 200% 100%;
-    background-position: -100% 0;
-    transition: background-position .5s;
-}
-
 .formWrapper{
     position: relative;
 }

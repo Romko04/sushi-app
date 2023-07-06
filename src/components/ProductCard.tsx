@@ -7,6 +7,8 @@ const ProductCard:React.FC<ProductsType & {typeProduct:string}> = (product) => {
     const {language,languages} = useSelector((state:RootState)=>state.languages)
     const dispatch:AppDispatch = useDispatch()
     const handleClick=() => {  
+    debugger
+
         dispatch(setProduct({
             description: {...product.description},
             id:product.id,

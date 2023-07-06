@@ -11,7 +11,6 @@ const Shipping: React.FC<BasketDataProps> = ({ values, handleChange }) => {
         <section className="shipping">
             <div className="shipping__types">
                 <span className="shipping__type shipping__type-left shipping__type-active--type">{languages[language]['shipping__type-left']}</span>
-                <span className="shipping__type shipping__type-right">{languages[language]['shipping__type-right']}</span>
             </div>
             <div className="data--form">
                 <label className="data--label">

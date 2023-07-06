@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import { DropdownOptionsType } from '../../types/types';
 const Header = () => {
     const dropDowns: DropdownOptionsType = {
-        numbers: ['48 696 84 31 31', '48 636 44 31 31', '42 6096 84 32 33'],
+        numbers: ['+380 96 560 71 22', '+380 96 420 71 23', '+380 96 839 71 23'],
         cities: ['kyiev', 'london'],
         languages: ['UA', 'EN']
     }

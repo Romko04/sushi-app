@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React from 'react';
 import styles from './MobileModal.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCity } from '../../../redux/slices/ProductsSlice';
@@ -14,6 +14,9 @@ const MobileModal: React.FC<MobileModalProps> = ({ type, children, closeModal })
     const dispatch = useDispatch();
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, value: string,type:string,) => {
       e.preventDefault();
+      if (type === '') {
+        dispatch(setCity(value))
+      }
       if (type === 'city') {
         dispatch(setCity(value))
       } else {

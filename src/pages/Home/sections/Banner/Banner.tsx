@@ -14,7 +14,7 @@ const Banner: React.FC = () => {
                     <div className="banner__content">
                         <h2 className="banner__content--title">{languages[language]['banner__content--title']}{languages[language][city]}</h2>
                         <p className="banner__content--text">{languages[language]['banner__content--text']}</p>
-                        <Link className="banner__content-link" to="/menu"><button className="banner__content-btn button">{languages[language]['banner__content-btn']}</button></Link>
+                        <Link className="banner__content-link" to="/menu"><button className="button banner__content-btn">{languages[language]['banner__content-btn']}</button></Link>
                     </div>
                 </div>
             </section>

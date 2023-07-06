@@ -1,17 +1,23 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../redux/store';
 import { valuesDataForm } from '../../types/types';
 import { Formik } from 'formik';
 import BasketData from './sections/BasketData';
 import BasketSideBar from './sections/BasketSideBar';
 import BasketProductCard from './sections/BasketProductCard';
 import Shipping from './sections/Shipping';
+import { setisOpenModal } from '../../redux/slices/ProductsSlice';
 
 const Basket: React.FC = () => {
     const {languages,language} = useSelector((state:RootState)=>state.languages)
     const { products, totalCount } = useSelector((state: RootState) => state.basket);
-
+    console.log(products);
+    
+    const dispatch:AppDispatch = useDispatch()
+    const handleClickLogin = () =>{
+        dispatch(setisOpenModal())
+    }
     const initialValuesData: valuesDataForm = {
         name: "",
         number: "",
@@ -57,7 +63,7 @@ const Basket: React.FC = () => {
                                         <h5 className="basket__login-title">{languages[language]['basket__login-title']}</h5>
                                         <span className="basket__login-text">{languages[language]['basket__login-text']}</span>
                                     </div>
-                                    <button className="button basket__login-btn">{languages[language]['basket__login-btn']}</button>
+                                    <button onClick={handleClickLogin} type='button' className="button basket__login-btn">{languages[language]['basket__login-btn']}</button>
                                 </div>
                                 <div className="basket__order">
                                     <div className="basket__order-top">

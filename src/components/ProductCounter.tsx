@@ -9,10 +9,11 @@ interface ProductCounter {
     findBasketProuduct: ProductsBasketType | undefined
 }
 const ProductCounter:React.FC<ProductCounter> = ({product, findBasketProuduct}) => {
+    const {typeProduct} = useSelector((state:RootState)=>state.products)
     const {languages,language} = useSelector((state:RootState)=>state.languages)
     const dispatch:AppDispatch = useDispatch()
     const setProductHandleClick=() => {
-            dispatch(setProduct({...product,counter:1}))
+            dispatch(setProduct({...product,counter:1,typeProduct}))
     }
     const incrementhandleClick=() => {
         if (product && findBasketProuduct) {

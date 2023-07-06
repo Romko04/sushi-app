@@ -38,12 +38,19 @@
         border-radius: 17px;
         &:hover{
             background-color: red;
+            @media only screen and (max-width: 767px) {
+                background: none; /* Замініть $btn-color на вашу змінну з бажаним фоновим кольором */
+              }
         }
     }
     &__navigation-img__title--menu{
         color: #000000;
         &:hover{
             color: #fff;
+            @media only screen and (max-width: 767px) {
+                color: #000000;
+
+              }
         }
     }
     &__navigation-img {
@@ -63,6 +70,9 @@
             opacity: 1;
             background-color: #F03C1F;
             color: #fff;
+            @media only screen and (max-width: 767px) {
+                background-color: #F8F8F8;
+              }
         }
     }
 

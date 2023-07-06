@@ -1,7 +1,8 @@
-import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const Footer = () => {
-    const {t} = useTranslation()
+    const {language,languages} = useSelector((state:RootState)=>state.languages)
     return (
         <footer className="footer">
         <div className="container">
@@ -36,10 +37,10 @@ const Footer = () => {
             </div>
             <div className="footer__content-bottom">
                 <div className="disain-author">
-                    <span>{t('design')}</span>
+                    <span>{languages[language]['design']}</span>
                 </div>
                 <div className="development-author">
-                    <span>{t('dev')}</span>
+                    <span>{languages[language]['dev']}</span>
                 </div>
             </div>
         </div>

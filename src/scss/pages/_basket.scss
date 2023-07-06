@@ -200,7 +200,7 @@
     padding-bottom: 150px;
     &__types{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         margin-bottom: 70px;
     }
     &__input{
@@ -230,11 +230,9 @@
              background: #F03C1F;
             color: #fff;
         }
-        &-right{
-            border-radius: 0px 12px 12px 0px;
-        }
         &-left{
-            border-radius: 12px 0px 0px 12px;
+            border-radius: 12px;
+
         }
     }
 }

@@ -26,17 +26,17 @@ const BasketProductCard:React.FC<{item:ProductsBasketType & {counter:number}}> =
             <div className="basket__order-item__content">
                 <div className="basket__order-item__content-top">
                     <h4 className="basket__order-item__title">{item.name[language]}</h4>
-                    <button onClick={() => deletehandleClick(item)} className="button product__counter-btn">
+                    <button type="button" onClick={() => deletehandleClick(item)} className="button product__counter-btn">
                         {<Khrest />}
                     </button>
                 </div>
                 <div className="product__order-item__content-bottom basket__order-item__content-bottom">
                     <div className="product__counter">
-                        <button onClick={() => { deincrementhandleClick(item) }} className="button product__counter-btn btn--plus">
+                        <button type="button" onClick={() => { deincrementhandleClick(item) }} className="button product__counter-btn btn--plus">
                             {<Minus />}
                         </button>
                         <span className="product__counter-value">{item.counter}</span>
-                        <button onClick={() => { incrementhandleClick(item) }} className="button product__counter-btn btn--plus">
+                        <button type="button" onClick={() => { incrementhandleClick(item) }} className="button product__counter-btn btn--plus">
                             {<Plus />}
                         </button>
                     </div>

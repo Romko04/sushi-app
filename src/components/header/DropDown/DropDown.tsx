@@ -10,7 +10,7 @@ interface PropsDropDown {
     list: string[];
 }
 const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
-    const {languages,language} = useSelector((state:RootState)=>state.languages)
+    const { languages, language } = useSelector((state: RootState) => state.languages)
     const dispatch = useDispatch()
     const [isActive, setActive] = useState<boolean>(false);
     const [activeIndex, setActiveIndex] = useState<number>(0)
@@ -20,21 +20,20 @@ const DropDown: React.FC<PropsDropDown> = ({ type, list }) => {
             setActive(false);
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         if (type === 'cities') {
             dispatch(setCity(list[activeIndex]))
         }
-    },[])
+    }, [])
     const handleClickLanguage = (type: string, item: string, event: React.MouseEvent<HTMLLIElement>, index: number) => {
+        event.preventDefault()
         switch (type) {
             case "cities":
-                event.preventDefault()
                 setActiveIndex(index)
                 dispatch(setCity(item))
                 setActive(false)
                 break;
             case "languages":
-                event.preventDefault()
                 setActiveIndex(index)
                 dispatch(setLanguage(item as "ua" || 'en'))
                 setActive(false)
