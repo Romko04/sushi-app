@@ -210,6 +210,9 @@
   &__title {
     margin-right: 96px;
     width: 50%;
+    @media (max-width: 988px) {
+      width: 100%;
+    }
   }
   &__order-content {
     display: flex;

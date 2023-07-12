@@ -13,11 +13,12 @@ const MobileModal: React.FC<MobileModalProps> = ({ type, children, closeModal })
   const {languages,language} = useSelector((state:RootState)=>state.languages)
     const dispatch = useDispatch();
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, value: string,type:string,) => {
+      debugger
       e.preventDefault();
       if (type === '') {
         dispatch(setCity(value))
       }
-      if (type === 'city') {
+      if (type === 'cities') {
         dispatch(setCity(value))
       } else {
         dispatch(setLanguage(value.toLocaleLowerCase() as "ua"|"en"))

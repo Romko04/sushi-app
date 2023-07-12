@@ -118,9 +118,8 @@ body {
   &::after {
     position: absolute;
     content: url('../assets/img/svg/arrowmenu.svg');
-    height: 10px;
-    top: 25px;
-    right: 29px;
+    top: 50%;
+    transform: translate(50%,-38%);
   }
 
   &:hover {

@@ -136,9 +136,6 @@ const RegistrationModal: React.FC = () => {
               <button type="submit" disabled={isSubmitting}>
                 Регистрация
               </button>
-              <button type="button" className={styles.formRegisterWithGoogle}>
-                <span className={styles.formRegisterWithGoogleText}>Login with Google</span>
-              </button>
               <div className={styles.btnChageWrapper}>
                 <span>Маєте аккаунт?</span>
                 <button onClick={handleClick} type="button" className={styles.changeForm}>

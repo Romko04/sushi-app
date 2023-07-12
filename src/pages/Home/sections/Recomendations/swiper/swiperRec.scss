@@ -88,14 +88,18 @@
 
   &:hover {
     background-color: #F03C1F;
-    stroke: #fff;
+    @media only screen and (max-width: 767px) {
+      background: #F8F8F8; /* Замініть $btn-color на вашу змінну з бажаним фоновим кольором */
+    }
   }
 }
 
 .recommendations__swiper-prev:hover .recommendations__swiper-icon,
 .recommendations__swiper-next:hover .recommendations__swiper-icon {
   stroke: #fff;
-  /* Змінює колір іконки на білий */
+  @media only screen and (max-width: 767px) {
+    stroke: #000;
+  }
 }
 
 .recommendations__swiper-prev {

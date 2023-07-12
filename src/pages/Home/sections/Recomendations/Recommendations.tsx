@@ -2,6 +2,7 @@ import React from 'react';
 import SwiperRec from './swiper/swiperRec';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../redux/store';
+import { Link } from 'react-router-dom';
 const Recommendations: React.FC = () => {
     const {languages,language} = useSelector((state:RootState)=>state.languages)
     return (
@@ -25,7 +26,7 @@ const Recommendations: React.FC = () => {
                             <path className="recommendations__swiper-icon" d="M9.5 1L18 9.5M18 9.5L9.5 18M18 9.5H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
-                    <button className="recommendations__swiper-btn button">{languages[language]['recommendations__swiper-btn']}</button>
+                    <Link to='/menu'><button className="recommendations__swiper-btn button">{languages[language]['recommendations__swiper-btn']}</button></Link>
                 </div>
             </div>
         </section>

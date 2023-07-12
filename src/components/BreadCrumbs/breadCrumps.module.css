@@ -30,7 +30,6 @@
 .link:hover {
     color: #F03C1F;
 }
-
 .item::after {
     content: '';
     position: absolute;
@@ -67,3 +66,14 @@
 .button:hover *  {
     stroke: #fff;
 }
+@media (max-width: 542px) {
+    .link:hover {
+        color: #C0C0C0;
+    }
+    .button:hover  {
+        background-color: #F8F8F8;
+    }
+    .button:hover *  {
+        stroke: #000;
+    }
+  }
