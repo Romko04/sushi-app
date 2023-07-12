@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/sushi-app/static/css/main.144fe259.css",
-    "main.js": "/sushi-app/static/js/main.4d2ab25c.js",
+    "main.css": "/sushi-app/static/css/main.a6e2c2cb.css",
+    "main.js": "/sushi-app/static/js/main.6da86e99.js",
     "static/media/img1.svg": "/sushi-app/static/media/img1.a5544de414f658e9c1b206c7ee8dd4cb.svg",
     "static/media/Banner2EN.png": "/sushi-app/static/media/Banner2EN.917027edf39ebff89b53.png",
-    "static/media/Banner2UA.png": "/sushi-app/static/media/Banner2UA.3714614f6f151c4e0782.png",
+    "static/media/Banner2UA.png": "/sushi-app/static/media/Banner2UA.a1b16b57937cbba47ace.png",
     "static/media/bannerEN.png": "/sushi-app/static/media/bannerEN.c9e0f47d0c943c3a2994.png",
     "static/media/bannerUA.png": "/sushi-app/static/media/bannerUA.38adc76a71848d5d07b7.png",
     "static/media/banner.jpg": "/sushi-app/static/media/banner.2da5efe3313f31feba45.jpg",
@@ -34,11 +34,11 @@
     "static/media/plus.svg": "/sushi-app/static/media/plus.37286863a679942c878179eecaa198d5.svg",
     "static/media/arrow45.svg": "/sushi-app/static/media/arrow45.3ce080d6e3b64e3ec0c7.svg",
     "static/media/minus.svg": "/sushi-app/static/media/minus.ddc3ca1f00d06aef33e082b3ddc5498b.svg",
-    "main.144fe259.css.map": "/sushi-app/static/css/main.144fe259.css.map",
-    "main.4d2ab25c.js.map": "/sushi-app/static/js/main.4d2ab25c.js.map"
+    "main.a6e2c2cb.css.map": "/sushi-app/static/css/main.a6e2c2cb.css.map",
+    "main.6da86e99.js.map": "/sushi-app/static/js/main.6da86e99.js.map"
   },
   "entrypoints": [
-    "static/css/main.144fe259.css",
-    "static/js/main.4d2ab25c.js"
+    "static/css/main.a6e2c2cb.css",
+    "static/js/main.6da86e99.js"
   ]
 }
